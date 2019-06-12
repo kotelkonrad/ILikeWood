@@ -2,7 +2,12 @@ package yamahari.ilikewood;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.WallBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -36,12 +41,12 @@ public class Main {
     public static class RegistryEventHandler {
         @SubscribeEvent
         public static void onRegisterBlock(final RegistryEvent.Register<Block> event) {
-
+            event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_wall"));
         }
 
         @SubscribeEvent
         public static void onRegisterItem(final RegistryEvent.Register<Item> event) {
-
+            event.getRegistry().register(new BlockItem(yamahari.ilikewood.objectholders.Blocks.oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_wall"));
         }
     }
 }
