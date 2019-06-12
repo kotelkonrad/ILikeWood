@@ -7,7 +7,6 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,12 +40,25 @@ public class Main {
     public static class RegistryEventHandler {
         @SubscribeEvent
         public static void onRegisterBlock(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_wall"));
+            event.getRegistry().registerAll(
+                new WallBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_wall"),
+                new WallBlock(Block.Properties.from(Blocks.DARK_OAK_LOG)).setRegistryName("dark_oak_wall"),
+                new WallBlock(Block.Properties.from(Blocks.SPRUCE_LOG)).setRegistryName("spruce_wall"),
+                new WallBlock(Block.Properties.from(Blocks.BIRCH_LOG)).setRegistryName("birch_wall"),
+                new WallBlock(Block.Properties.from(Blocks.ACACIA_LOG)).setRegistryName("acacia_wall"),
+                new WallBlock(Block.Properties.from(Blocks.JUNGLE_LOG)).setRegistryName("jungle_wall")
+            );
         }
 
         @SubscribeEvent
         public static void onRegisterItem(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(yamahari.ilikewood.objectholders.Blocks.oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_wall"));
+            event.getRegistry().registerAll(
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_wall"),
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.dark_oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_wall"),
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.spruce_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_wall"),
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.birch_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_wall"),
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.acacia_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_wall"),
+                new BlockItem(yamahari.ilikewood.objectholders.Blocks.jungle_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_wall"));
         }
     }
 }

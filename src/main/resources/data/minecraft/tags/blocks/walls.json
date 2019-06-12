@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_wall",
+    "ilikewood:dark_oak_wall",
+    "ilikewood:spruce_wall",
+    "ilikewood:birch_wall",
+    "ilikewood:acacia_wall",
+    "ilikewood:jungle_wall"
+  ]
+}
