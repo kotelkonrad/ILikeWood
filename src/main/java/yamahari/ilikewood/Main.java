@@ -42,12 +42,12 @@ public class Main {
 
     private void onFMLClientSetup(final FMLClientSetupEvent event) {
         logger.info(Constants.MOD_ID + " : client setup");
-        ClientRegistry.bindTileEntitySpecialRenderer(OakChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
-        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
-        ClientRegistry.bindTileEntitySpecialRenderer(SpruceChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
-        ClientRegistry.bindTileEntitySpecialRenderer(BirchChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
-        ClientRegistry.bindTileEntitySpecialRenderer(JungleChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
-        ClientRegistry.bindTileEntitySpecialRenderer(AcaciaChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(OakChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(SpruceChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(BirchChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(JungleChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(AcaciaChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
