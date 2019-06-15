@@ -63,6 +63,13 @@ public abstract class WoodenChestBlock extends ChestBlock {
     }
 
     @Override
+    @Nullable
+    public INamedContainerProvider getContainer(BlockState p_220052_1_, World p_220052_2_, BlockPos p_220052_3_) {
+        return (INamedContainerProvider)func_220106_a(p_220052_1_, p_220052_2_, p_220052_3_, false, field_220110_j);
+    }
+
+
+    @Override
     public void onBlockPlacedBy(World p_180633_1_, BlockPos p_180633_2_, BlockState p_180633_3_, LivingEntity p_180633_4_, ItemStack p_180633_5_) {
         super.onBlockPlacedBy(p_180633_1_, p_180633_2_, p_180633_3_, p_180633_4_, p_180633_5_);
     }
@@ -103,9 +110,14 @@ public abstract class WoodenChestBlock extends ChestBlock {
         }
     }
 
+    @Nullable
+    public static IInventory getInventory(BlockState p_220105_0_, World p_220105_1_, BlockPos p_220105_2_, boolean p_220105_3_) {
+        return (IInventory)func_220106_a(p_220105_0_, p_220105_1_, p_220105_2_, p_220105_3_, field_220109_i);
+    }
+
     @Override
     public int getComparatorInputOverride(BlockState p_180641_1_, World p_180641_2_, BlockPos p_180641_3_) {
-        return super.getComparatorInputOverride(p_180641_1_, p_180641_2_, p_180641_3_);
+        return Container.calcRedstoneFromInventory(getInventory(p_180641_1_, p_180641_2_, p_180641_3_, false));
     }
 
     @Override
