@@ -89,22 +89,22 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
             switch(((WoodenChestTileEntity)p_199347_1_).getWoodType()) {
                 case OAK:
                 default:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
                     break;
                 case DARK_OAK:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_DARK_OAK : TEXTURE_DARK_OAK_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_DARK_OAK : TEXTURE_DARK_OAK_DOUBLE;
                     break;
                 case SPRUCE:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_SPRUCE : TEXTURE_SPRUCE_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_SPRUCE : TEXTURE_SPRUCE_DOUBLE;
                     break;
                 case BIRCH:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_BIRCH : TEXTURE_BIRCH_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_BIRCH : TEXTURE_BIRCH_DOUBLE;
                     break;
                 case ACACIA:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_ACACIA : TEXTURE_ACACIA_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_ACACIA : TEXTURE_ACACIA_DOUBLE;
                     break;
                 case JUNGLE:
-                    lvt_4_5_ = p_199347_3_ ? TEXTURE_JUNGLE : TEXTURE_JUNGLE_DOUBLE;
+                    lvt_4_5_ = !p_199347_3_ ? TEXTURE_JUNGLE : TEXTURE_JUNGLE_DOUBLE;
                     break;
             }
         }
