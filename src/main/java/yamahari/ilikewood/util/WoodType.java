@@ -19,6 +19,6 @@ public enum WoodType implements IStringSerializable {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }

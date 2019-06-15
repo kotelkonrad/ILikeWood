@@ -35,17 +35,17 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
     private final ChestModel largeChest = new LargeChestModel();
 
     @Override
-    public void render(T p_199341_1_, double p_199341_2_, double p_199341_4_, double p_199341_6_, float p_199341_8_, int p_199341_9_) {
+    public void render(T tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
         GlStateManager.enableDepthTest();
         GlStateManager.depthFunc(515);
         GlStateManager.depthMask(true);
-        BlockState lvt_10_1_ = p_199341_1_.hasWorld() ? p_199341_1_.getBlockState() : (BlockState) ModBlocks.oak_chest.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
+        BlockState lvt_10_1_ = tileEntityIn.hasWorld() ? tileEntityIn.getBlockState() : (BlockState) ModBlocks.oak_chest.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
 
         ChestType lvt_11_1_ = lvt_10_1_.has(WoodenChestBlock.TYPE) ? (ChestType)lvt_10_1_.get(WoodenChestBlock.TYPE) : ChestType.SINGLE;
         if (lvt_11_1_ != ChestType.LEFT) {
             boolean lvt_12_1_ = lvt_11_1_ != ChestType.SINGLE;
-            ChestModel lvt_13_1_ = this.func_199347_a(p_199341_1_, p_199341_9_, lvt_12_1_);
-            if (p_199341_9_ >= 0) {
+            ChestModel lvt_13_1_ = this.func_199347_a(tileEntityIn, destroyStage, lvt_12_1_);
+            if (destroyStage >= 0) {
                 GlStateManager.matrixMode(5890);
                 GlStateManager.pushMatrix();
                 GlStateManager.scalef(lvt_12_1_ ? 8.0F : 4.0F, 4.0F, 1.0F);
@@ -57,7 +57,7 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
 
             GlStateManager.pushMatrix();
             GlStateManager.enableRescaleNormal();
-            GlStateManager.translatef((float)p_199341_2_, (float)p_199341_4_ + 1.0F, (float)p_199341_6_ + 1.0F);
+            GlStateManager.translatef((float)x, (float)y + 1.0F, (float)z + 1.0F);
             GlStateManager.scalef(1.0F, -1.0F, -1.0F);
             float lvt_14_1_ = ((Direction)lvt_10_1_.get(WoodenChestBlock.FACING)).getHorizontalAngle();
             if ((double)Math.abs(lvt_14_1_) > 1.0E-5D) {
@@ -66,12 +66,12 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
                 GlStateManager.translatef(-0.5F, -0.5F, -0.5F);
             }
 
-            this.func_199346_a(p_199341_1_, p_199341_8_, lvt_13_1_);
+            this.func_199346_a(tileEntityIn, partialTicks, lvt_13_1_);
             lvt_13_1_.renderAll();
             GlStateManager.disableRescaleNormal();
             GlStateManager.popMatrix();
             GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-            if (p_199341_9_ >= 0) {
+            if (destroyStage >= 0) {
                 GlStateManager.matrixMode(5890);
                 GlStateManager.popMatrix();
                 GlStateManager.matrixMode(5888);

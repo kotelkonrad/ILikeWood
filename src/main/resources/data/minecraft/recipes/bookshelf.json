@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "ilikewood:bookshelfs"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bookshelf"
+  }
+}

@@ -3,6 +3,7 @@ package yamahari.ilikewood;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.EnchantingTableBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -18,6 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import yamahari.ilikewood.blocks.BookshelfBlock;
 import yamahari.ilikewood.blocks.barrel.*;
 import yamahari.ilikewood.blocks.chests.*;
 import yamahari.ilikewood.objectholders.ModBlocks;
@@ -26,6 +28,7 @@ import yamahari.ilikewood.tileentities.chest.*;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
+import yamahari.ilikewood.util.WoodType;
 
 @Mod(Constants.MOD_ID)
 public class Main {
@@ -77,6 +80,10 @@ public class Main {
                 new JungleChestBlock().setRegistryName("jungle_chest"),
                 new AcaciaChestBlock().setRegistryName("acacia_chest")
             );
+
+            for(WoodType woodType : WoodType.values()) {
+                event.getRegistry().register(new BookshelfBlock().setRegistryName(woodType.getName() + "_bookshelf"));
+            }
         }
 
         @SubscribeEvent
@@ -101,7 +108,14 @@ public class Main {
                 new BlockItem(ModBlocks.spruce_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS).setTEISR(() -> WoodenChestItemStackTileEntityRenderer::new)).setRegistryName("spruce_chest"),
                 new BlockItem(ModBlocks.birch_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS).setTEISR(() -> WoodenChestItemStackTileEntityRenderer::new)).setRegistryName("birch_chest"),
                 new BlockItem(ModBlocks.jungle_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS).setTEISR(() -> WoodenChestItemStackTileEntityRenderer::new)).setRegistryName("jungle_chest"),
-                new BlockItem(ModBlocks.acacia_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS).setTEISR(() -> WoodenChestItemStackTileEntityRenderer::new)).setRegistryName("acacia_chest")
+                new BlockItem(ModBlocks.acacia_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS).setTEISR(() -> WoodenChestItemStackTileEntityRenderer::new)).setRegistryName("acacia_chest"),
+
+                new BlockItem(ModBlocks.oak_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_bookshelf"),
+                new BlockItem(ModBlocks.dark_oak_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_bookshelf"),
+                new BlockItem(ModBlocks.spruce_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_bookshelf"),
+                new BlockItem(ModBlocks.birch_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_bookshelf"),
+                new BlockItem(ModBlocks.jungle_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_bookshelf"),
+                new BlockItem(ModBlocks.acacia_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_bookshelf")
             );
         }
 

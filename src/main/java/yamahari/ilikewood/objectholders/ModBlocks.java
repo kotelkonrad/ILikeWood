@@ -27,4 +27,11 @@ public class ModBlocks {
     public static final Block birch_chest = null;
     public static final Block jungle_chest = null;
     public static final Block acacia_chest = null;
+
+    public static final Block oak_bookshelf = null;
+    public static final Block dark_oak_bookshelf = null;
+    public static final Block spruce_bookshelf = null;
+    public static final Block birch_bookshelf = null;
+    public static final Block jungle_bookshelf = null;
+    public static final Block acacia_bookshelf = null;
 }
