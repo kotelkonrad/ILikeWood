@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_barrel",
+    "ilikewood:dark_oak_barrel",
+    "ilikewood:spruce_barrel",
+    "ilikewood:birch_barrel",
+    "ilikewood:acacia_barrel",
+    "ilikewood:jungle_barrel"
+  ]
+}

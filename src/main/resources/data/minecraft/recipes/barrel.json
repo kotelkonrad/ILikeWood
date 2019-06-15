@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "ilikewood:barrels"
+    }
+  ],
+  "result": {
+    "item": "minecraft:barrel"
+  }
+}
