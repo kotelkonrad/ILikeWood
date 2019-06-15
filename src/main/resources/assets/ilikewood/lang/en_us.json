@@ -5,16 +5,32 @@
   "block.ilikewood.spruce_wall": "Spruce Wall",
   "block.ilikewood.birch_wall": "Birch Wall",
   "block.ilikewood.jungle_wall": "Jungle Wall",
+
   "block.ilikewood.oak_barrel": "Oak Barrel",
   "block.ilikewood.dark_oak_barrel": "Dark Oak Barrel",
   "block.ilikewood.spruce_barrel": "Spruce Barrel",
   "block.ilikewood.birch_barrel": "Birch Barrel",
   "block.ilikewood.jungle_barrel": "Jungle Barrel",
   "block.ilikewood.acacia_barrel": "Acacia Barrel",
-  "container.oak_barrel": "Oak Barrel",
-  "container.dark_oak_barrel": "Dark Oak Barrel",
-  "container.spruce_barrel": "Spruce Barrel",
-  "container.birch_barrel": "Birch Barrel",
-  "container.jungle_barrel": "Jungle Barrel",
-  "container.acacia_barrel": "Acacia Barrel"
+
+  "container.ilikewood.oak_barrel": "Oak Barrel",
+  "container.ilikewood.dark_oak_barrel": "Dark Oak Barrel",
+  "container.ilikewood.spruce_barrel": "Spruce Barrel",
+  "container.ilikewood.birch_barrel": "Birch Barrel",
+  "container.ilikewood.jungle_barrel": "Jungle Barrel",
+  "container.ilikewood.acacia_barrel": "Acacia Barrel",
+
+  "container.ilikewood.oak_chest": "Oak Chest",
+  "container.ilikewood.dark_oak_chest": "Dark Oak Chest",
+  "container.ilikewood.spruce_chest": "Spruce Chest",
+  "container.ilikewood.birch_chest": "Birch Chest",
+  "container.ilikewood.jungle_chest": "Jungle Chest",
+  "container.ilikewood.acacia_chest:": "Acacia Chest",
+
+  "block.ilikewood.oak_chest": "Oak Chest",
+  "block.ilikewood.dark_oak_chest": "Dark Oak Chest",
+  "block.ilikewood.spruce_chest": "Spruce Chest",
+  "block.ilikewood.birch_chest": "Birch Chest",
+  "block.ilikewood.jungle_chest": "Jungle Chest",
+  "block.ilikewood.acacia_chest": "Acacia Chest"
 }

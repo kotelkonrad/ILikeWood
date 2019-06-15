@@ -108,17 +108,17 @@ public class WoodenBarrelTileEntity extends LockableLootTileEntity {
         switch (woodType) {
             case OAK:
             default:
-                return new TranslationTextComponent("container.oak_barrel");
+                return new TranslationTextComponent("container.ilikewood.oak_barrel");
             case DARK_OAK:
-                return new TranslationTextComponent("container.dark_oak_barrel");
+                return new TranslationTextComponent("container.ilikewood.dark_oak_barrel");
             case SPRUCE:
-                return new TranslationTextComponent("container.spruce_barrel");
+                return new TranslationTextComponent("container.ilikewood.spruce_barrel");
             case BIRCH:
-                return new TranslationTextComponent("container.birch_barrel");
+                return new TranslationTextComponent("container.ilikewood.birch_barrel");
             case JUNGLE:
-                return new TranslationTextComponent("container.jungle_barrel");
+                return new TranslationTextComponent("container.ilikewood.jungle_barrel");
             case ACACIA:
-                return new TranslationTextComponent("container.acacia_barrel");
+                return new TranslationTextComponent("container.ilikewood.acacia_barrel");
         }
     }
 

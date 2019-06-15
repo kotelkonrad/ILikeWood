@@ -13,6 +13,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.properties.ChestType;
+import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import yamahari.ilikewood.tileentities.chest.*;
 import net.minecraft.tileentity.TileEntity;
@@ -32,7 +33,7 @@ public abstract class WoodenChestBlock extends ChestBlock {
     private static final WoodenChestBlock.InventoryFactory<IInventory> field_220109_i;
     private static final WoodenChestBlock.InventoryFactory<INamedContainerProvider> field_220110_j;
     public WoodenChestBlock() {
-        super(Block.Properties.create(Material.WOOD));
+        super(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5f).sound(SoundType.WOOD));
     }
 
     public abstract WoodType getWoodType();
@@ -71,7 +72,13 @@ public abstract class WoodenChestBlock extends ChestBlock {
 
     @Override
     public void onBlockPlacedBy(World p_180633_1_, BlockPos p_180633_2_, BlockState p_180633_3_, LivingEntity p_180633_4_, ItemStack p_180633_5_) {
-        super.onBlockPlacedBy(p_180633_1_, p_180633_2_, p_180633_3_, p_180633_4_, p_180633_5_);
+        if (p_180633_5_.hasDisplayName()) {
+            TileEntity lvt_6_1_ = p_180633_1_.getTileEntity(p_180633_2_);
+            if (lvt_6_1_ instanceof WoodenChestTileEntity) {
+                ((WoodenChestTileEntity)lvt_6_1_).setCustomName(p_180633_5_.getDisplayName());
+            }
+        }
+
     }
 
     @Nullable

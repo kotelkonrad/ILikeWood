@@ -78,7 +78,21 @@ public class WoodenChestTileEntity extends LockableLootTileEntity implements ICh
 
     @Override
     protected ITextComponent getDefaultName() {
-        return new TranslationTextComponent("container.chest");
+        switch (woodType) {
+            case OAK:
+            default:
+                return new TranslationTextComponent("container.ilikewood.oak_chest");
+            case DARK_OAK:
+                return new TranslationTextComponent("container.ilikewood.dark_oak_chest");
+            case SPRUCE:
+                return new TranslationTextComponent("container.ilikewood.spruce_chest");
+            case BIRCH:
+                return new TranslationTextComponent("container.ilikewood.birch_chest");
+            case JUNGLE:
+                return new TranslationTextComponent("container.ilikewood.jungle_chest");
+            case ACACIA:
+                return new TranslationTextComponent("container.ilikewood.acacia_chest");
+        }
     }
 
     @Override
