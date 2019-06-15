@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import yamahari.ilikewood.tileentities.*;
+import yamahari.ilikewood.tileentities.barrel.*;
 import yamahari.ilikewood.util.WoodType;
 
 import javax.annotation.Nullable;

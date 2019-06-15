@@ -1,4 +1,4 @@
-package yamahari.ilikewood.tileentities;
+package yamahari.ilikewood.tileentities.barrel;
 
 import yamahari.ilikewood.objectholders.ModTileEntityType;
 import yamahari.ilikewood.util.WoodType;

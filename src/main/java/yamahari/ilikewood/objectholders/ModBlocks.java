@@ -13,11 +13,18 @@ public class ModBlocks {
     public static final Block birch_wall = null;
     public static final Block acacia_wall = null;
     public static final Block jungle_wall = null;
-    // public static final Block oak_chest = null;
+
     public static final Block oak_barrel = null;
     public static final Block dark_oak_barrel = null;
     public static final Block spruce_barrel = null;
     public static final Block birch_barrel = null;
     public static final Block jungle_barrel = null;
     public static final Block acacia_barrel = null;
+
+    public static final Block oak_chest = null;
+    public static final Block dark_oak_chest = null;
+    public static final Block spruce_chest = null;
+    public static final Block birch_chest = null;
+    public static final Block jungle_chest = null;
+    public static final Block acacia_chest = null;
 }

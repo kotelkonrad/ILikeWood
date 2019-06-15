@@ -1,7 +1,9 @@
 package yamahari.ilikewood;
 
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -9,6 +11,8 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,7 +21,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
 import yamahari.ilikewood.objectholders.ModBlocks;
-import yamahari.ilikewood.tileentities.*;
+import yamahari.ilikewood.tileentities.barrel.*;
+import yamahari.ilikewood.tileentities.chest.*;
+import yamahari.ilikewood.tileentities.renderer.WoodenChestTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
 
 @Mod(Constants.MOD_ID)
@@ -36,6 +42,12 @@ public class Main {
 
     private void onFMLClientSetup(final FMLClientSetupEvent event) {
         logger.info(Constants.MOD_ID + " : client setup");
+        ClientRegistry.bindTileEntitySpecialRenderer(OakChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(DarkOakChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(SpruceChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(BirchChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(JungleChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(AcaciaChestTileEntity.class, new WoodenChestTileEntityRenderer<WoodenChestTileEntity>());
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -49,12 +61,20 @@ public class Main {
                 new WallBlock(Block.Properties.from(Blocks.BIRCH_LOG)).setRegistryName("birch_wall"),
                 new WallBlock(Block.Properties.from(Blocks.ACACIA_LOG)).setRegistryName("acacia_wall"),
                 new WallBlock(Block.Properties.from(Blocks.JUNGLE_LOG)).setRegistryName("jungle_wall"),
+
                 new OakBarrelBlock().setRegistryName("oak_barrel"),
                 new DarkOakBarrelBlock().setRegistryName("dark_oak_barrel"),
                 new SpruceBarrelBlock().setRegistryName("spruce_barrel"),
                 new BirchBarrelBlock().setRegistryName("birch_barrel"),
                 new JungleBarrelBlock().setRegistryName("jungle_barrel"),
-                new AcaciaBarrelBlock().setRegistryName("acacia_barrel")
+                new AcaciaBarrelBlock().setRegistryName("acacia_barrel"),
+
+                new OakChestBlock().setRegistryName("oak_chest"),
+                new DarkOakChestBlock().setRegistryName("dark_oak_chest"),
+                new SpruceChestBlock().setRegistryName("spruce_chest"),
+                new BirchChestBlock().setRegistryName("birch_chest"),
+                new JungleChestBlock().setRegistryName("jungle_chest"),
+                new AcaciaChestBlock().setRegistryName("acacia_chest")
             );
         }
 
@@ -67,12 +87,20 @@ public class Main {
                 new BlockItem(ModBlocks.birch_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_wall"),
                 new BlockItem(ModBlocks.acacia_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_wall"),
                 new BlockItem(ModBlocks.jungle_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_wall"),
+
                 new BlockItem(ModBlocks.oak_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_barrel"),
                 new BlockItem(ModBlocks.dark_oak_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_barrel"),
                 new BlockItem(ModBlocks.spruce_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_barrel"),
                 new BlockItem(ModBlocks.birch_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_barrel"),
                 new BlockItem(ModBlocks.jungle_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_barrel"),
-                new BlockItem(ModBlocks.acacia_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_barrel")
+                new BlockItem(ModBlocks.acacia_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_barrel"),
+
+                new BlockItem(ModBlocks.oak_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_chest"),
+                new BlockItem(ModBlocks.dark_oak_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_chest"),
+                new BlockItem(ModBlocks.spruce_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_chest"),
+                new BlockItem(ModBlocks.birch_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_chest"),
+                new BlockItem(ModBlocks.jungle_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_chest"),
+                new BlockItem(ModBlocks.acacia_chest, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_chest")
             );
         }
 
@@ -84,7 +112,14 @@ public class Main {
                 TileEntityType.Builder.create(SpruceBarrelTileEntity::new, ModBlocks.spruce_barrel).build(null).setRegistryName("spruce_barrel"),
                 TileEntityType.Builder.create(BirchBarrelTileEntity::new, ModBlocks.birch_barrel).build(null).setRegistryName("birch_barrel"),
                 TileEntityType.Builder.create(JungleBarrelTileEntity::new, ModBlocks.jungle_barrel).build(null).setRegistryName("jungle_barrel"),
-                TileEntityType.Builder.create(AcaciaBarrelTileEntity::new, ModBlocks.acacia_barrel).build(null).setRegistryName("acacia_barrel")
+                TileEntityType.Builder.create(AcaciaBarrelTileEntity::new, ModBlocks.acacia_barrel).build(null).setRegistryName("acacia_barrel"),
+
+                TileEntityType.Builder.create(OakChestTileEntity::new, ModBlocks.oak_chest).build(null).setRegistryName("oak_chest"),
+                TileEntityType.Builder.create(DarkOakChestTileEntity::new, ModBlocks.dark_oak_chest).build(null).setRegistryName("dark_oak_chest"),
+                TileEntityType.Builder.create(SpruceChestTileEntity::new, ModBlocks.spruce_chest).build(null).setRegistryName("spruce_chest"),
+                TileEntityType.Builder.create(BirchChestTileEntity::new, ModBlocks.birch_chest).build(null).setRegistryName("birch_chest"),
+                TileEntityType.Builder.create(JungleChestTileEntity::new, ModBlocks.jungle_chest).build(null).setRegistryName("jungle_chest"),
+                TileEntityType.Builder.create(AcaciaChestTileEntity::new, ModBlocks.acacia_chest).build(null).setRegistryName("acacia_chest")
             );
         }
     }

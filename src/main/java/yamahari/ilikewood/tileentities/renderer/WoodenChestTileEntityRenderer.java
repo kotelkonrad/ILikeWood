@@ -2,40 +2,46 @@ package yamahari.ilikewood.tileentities.renderer;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.ChestBlock;
-import net.minecraft.client.renderer.tileentity.ChestTileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.model.ChestModel;
 import net.minecraft.client.renderer.tileentity.model.LargeChestModel;
 import net.minecraft.state.properties.ChestType;
-import net.minecraft.tileentity.EnderChestTileEntity;
 import net.minecraft.tileentity.IChestLid;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TrappedChestTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import yamahari.ilikewood.blocks.WoodenChestBlock;
+import yamahari.ilikewood.objectholders.ModBlocks;
+import yamahari.ilikewood.tileentities.chest.WoodenChestTileEntity;
+import yamahari.ilikewood.util.Constants;
 
-/*
-@OnlyIn(Dist.CLIENT)
 public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> extends TileEntityRenderer<T> {
-    private static final ResourceLocation TEXTURE_OAK_NORMAL = new ResourceLocation("ilikewood:textures/entity/chest/oak_chest.png");
+    private static ResourceLocation TEXTURE_OAK = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/oak.png");
+    private static ResourceLocation TEXTURE_DARK_OAK = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/dark_oak.png");
+    private static ResourceLocation TEXTURE_SPRUCE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/spruce.png");
+    private static ResourceLocation TEXTURE_BIRCH = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/birch.png");
+    private static ResourceLocation TEXTURE_JUNGLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/jungle.png");
+    private static ResourceLocation TEXTURE_ACACIA = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/acacia.png");
 
-    private final ChestModel field_147510_h = new ChestModel();
-    private final ChestModel field_147511_i = new LargeChestModel();
+    private static ResourceLocation TEXTURE_OAK_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/oak_double.png");
+    private static ResourceLocation TEXTURE_DARK_OAK_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/dark_oak_double.png");
+    private static ResourceLocation TEXTURE_SPRUCE_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/spruce_double.png");
+    private static ResourceLocation TEXTURE_BIRCH_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/birch_double.png");
+    private static ResourceLocation TEXTURE_JUNGLE_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/jungle_double.png");
+    private static ResourceLocation TEXTURE_ACACIA_DOUBLE = new ResourceLocation(Constants.MOD_ID, "textures/entity/chest/acacia_double.png");
 
-    public WoodenChestTileEntityRenderer() {
+    private final ChestModel simpleChest = new ChestModel();
+    private final ChestModel largeChest = new LargeChestModel();
 
-    }
-
+    @Override
     public void render(T p_199341_1_, double p_199341_2_, double p_199341_4_, double p_199341_6_, float p_199341_8_, int p_199341_9_) {
         GlStateManager.enableDepthTest();
         GlStateManager.depthFunc(515);
         GlStateManager.depthMask(true);
-        BlockState lvt_10_1_ = p_199341_1_.hasWorld() ? p_199341_1_.getBlockState() : (BlockState) ModBlocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
-        ChestType lvt_11_1_ = lvt_10_1_.has(ChestBlock.TYPE) ? (ChestType)lvt_10_1_.get(ChestBlock.TYPE) : ChestType.SINGLE;
+        BlockState lvt_10_1_ = p_199341_1_.hasWorld() ? p_199341_1_.getBlockState() : (BlockState) ModBlocks.oak_chest.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
+
+        ChestType lvt_11_1_ = lvt_10_1_.has(WoodenChestBlock.TYPE) ? (ChestType)lvt_10_1_.get(WoodenChestBlock.TYPE) : ChestType.SINGLE;
         if (lvt_11_1_ != ChestType.LEFT) {
             boolean lvt_12_1_ = lvt_11_1_ != ChestType.SINGLE;
             ChestModel lvt_13_1_ = this.func_199347_a(p_199341_1_, p_199341_9_, lvt_12_1_);
@@ -53,7 +59,7 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
             GlStateManager.enableRescaleNormal();
             GlStateManager.translatef((float)p_199341_2_, (float)p_199341_4_ + 1.0F, (float)p_199341_6_ + 1.0F);
             GlStateManager.scalef(1.0F, -1.0F, -1.0F);
-            float lvt_14_1_ = ((Direction)lvt_10_1_.get(ChestBlock.FACING)).getHorizontalAngle();
+            float lvt_14_1_ = ((Direction)lvt_10_1_.get(WoodenChestBlock.FACING)).getHorizontalAngle();
             if ((double)Math.abs(lvt_14_1_) > 1.0E-5D) {
                 GlStateManager.translatef(0.5F, 0.5F, 0.5F);
                 GlStateManager.rotatef(lvt_14_1_, 0.0F, 1.0F, 0.0F);
@@ -78,18 +84,36 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
         ResourceLocation lvt_4_5_;
         if (p_199347_2_ >= 0) {
             lvt_4_5_ = DESTROY_STAGES[p_199347_2_];
-        } else if (this.isChristmas) {
-            lvt_4_5_ = p_199347_3_ ? TEXTURE_CHRISTMAS_DOUBLE : TEXTURE_CHRISTMAS;
-        } else if (p_199347_1_ instanceof TrappedChestTileEntity) {
-            lvt_4_5_ = p_199347_3_ ? TEXTURE_TRAPPED_DOUBLE : TEXTURE_TRAPPED;
-        } else if (p_199347_1_ instanceof EnderChestTileEntity) {
-            lvt_4_5_ = field_199348_i;
-        } else {
-            lvt_4_5_ = p_199347_3_ ? TEXTURE_NORMAL_DOUBLE : TEXTURE_NORMAL;
+        }
+        else if(p_199347_1_ instanceof WoodenChestTileEntity) {
+            switch(((WoodenChestTileEntity)p_199347_1_).getWoodType()) {
+                case OAK:
+                default:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
+                    break;
+                case DARK_OAK:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_DARK_OAK : TEXTURE_DARK_OAK_DOUBLE;
+                    break;
+                case SPRUCE:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_SPRUCE : TEXTURE_SPRUCE_DOUBLE;
+                    break;
+                case BIRCH:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_BIRCH : TEXTURE_BIRCH_DOUBLE;
+                    break;
+                case ACACIA:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_ACACIA : TEXTURE_ACACIA_DOUBLE;
+                    break;
+                case JUNGLE:
+                    lvt_4_5_ = p_199347_3_ ? TEXTURE_JUNGLE : TEXTURE_JUNGLE_DOUBLE;
+                    break;
+            }
+        }
+        else {
+            lvt_4_5_ = p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
         }
 
         this.bindTexture(lvt_4_5_);
-        return p_199347_3_ ? this.field_147511_i : this.field_147510_h;
+        return p_199347_3_ ? this.largeChest : this.simpleChest;
     }
 
     private void func_199346_a(T p_199346_1_, float p_199346_2_, ChestModel p_199346_3_) {
@@ -98,4 +122,4 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
         lvt_4_1_ = 1.0F - lvt_4_1_ * lvt_4_1_ * lvt_4_1_;
         p_199346_3_.getLid().rotateAngleX = -(lvt_4_1_ * 1.5707964F);
     }
-}*/
+}

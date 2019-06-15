@@ -1,4 +1,4 @@
-package yamahari.ilikewood.tileentities;
+package yamahari.ilikewood.tileentities.barrel;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
