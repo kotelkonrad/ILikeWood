@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "ilikewood:block/dark_oak_barrel_top",
+    "side": "ilikewood:block/dark_oak_barrel_side",
+    "bottom": "ilikewood:block/dark_oak_barrel_bottom"
+  }
+}

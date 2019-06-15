@@ -1,12 +1,16 @@
 package yamahari.ilikewood;
 
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.WallBlock;
+import com.mojang.datafixers.DataFixUtils;
+import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tileentity.BarrelTileEntity;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.datafix.DataFixesManager;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import yamahari.ilikewood.objectholders.ModBlocks;
 import yamahari.ilikewood.util.Constants;
 
 @Mod(Constants.MOD_ID)
@@ -48,17 +53,33 @@ public class Main {
                 new WallBlock(Block.Properties.from(Blocks.ACACIA_LOG)).setRegistryName("acacia_wall"),
                 new WallBlock(Block.Properties.from(Blocks.JUNGLE_LOG)).setRegistryName("jungle_wall")
             );
+
+            for(String wood : new String[]{"oak", "dark_oak", "spruce", "birch", "jungle", "acacia"}) {
+                event.getRegistry().register(new BarrelBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5f).sound(SoundType.WOOD)).setRegistryName(wood + "_barrel"));
+            }
         }
 
         @SubscribeEvent
         public static void onRegisterItem(final RegistryEvent.Register<Item> event) {
             event.getRegistry().registerAll(
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_wall"),
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.dark_oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_wall"),
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.spruce_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_wall"),
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.birch_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_wall"),
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.acacia_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_wall"),
-                new BlockItem(yamahari.ilikewood.objectholders.Blocks.jungle_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_wall"));
+                new BlockItem(ModBlocks.oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_wall"),
+                new BlockItem(ModBlocks.dark_oak_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_wall"),
+                new BlockItem(ModBlocks.spruce_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_wall"),
+                new BlockItem(ModBlocks.birch_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_wall"),
+                new BlockItem(ModBlocks.acacia_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_wall"),
+                new BlockItem(ModBlocks.jungle_wall, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_wall"),
+                new BlockItem(ModBlocks.oak_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_barrel"),
+                new BlockItem(ModBlocks.dark_oak_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_barrel"),
+                new BlockItem(ModBlocks.spruce_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_barrel"),
+                new BlockItem(ModBlocks.birch_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_barrel"),
+                new BlockItem(ModBlocks.jungle_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_barrel"),
+                new BlockItem(ModBlocks.acacia_barrel, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_barrel")
+            );
+        }
+
+        @SubscribeEvent
+        public static void onRegisterTileEntity(final RegistryEvent.Register<TileEntityType<?>> event) {
+            event.getRegistry().register(TileEntityType.Builder.func_223042_a(BarrelTileEntity::new, ModBlocks.oak_barrel).build(DataFixesManager.getDataFixer().getSchema(DataFixUtils.makeKey(98754)).getChoiceType(TypeReferences.BLOCK_ENTITY, "oak_barrel")));
         }
     }
 }
