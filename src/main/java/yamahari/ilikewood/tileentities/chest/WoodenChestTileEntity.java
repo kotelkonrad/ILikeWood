@@ -23,7 +23,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import yamahari.ilikewood.blocks.WoodenChestBlock;
+import yamahari.ilikewood.blocks.chests.WoodenChestBlock;
 import yamahari.ilikewood.util.WoodType;
 
 public class WoodenChestTileEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
@@ -93,6 +93,11 @@ public class WoodenChestTileEntity extends LockableLootTileEntity implements ICh
             case ACACIA:
                 return new TranslationTextComponent("container.ilikewood.acacia_chest");
         }
+    }
+
+    @Override
+    public AxisAlignedBB getRenderBoundingBox() {
+        return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(2, 2, 2));
     }
 
     @Override

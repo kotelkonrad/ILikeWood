@@ -12,10 +12,11 @@ import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import yamahari.ilikewood.blocks.WoodenBarrelBlock;
+import yamahari.ilikewood.blocks.barrel.WoodenBarrelBlock;
 import yamahari.ilikewood.util.WoodType;
 
 import java.util.Iterator;

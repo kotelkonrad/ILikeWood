@@ -1,8 +1,8 @@
-package yamahari.ilikewood.blocks;
+package yamahari.ilikewood.blocks.barrel;
 
 import yamahari.ilikewood.util.WoodType;
 
-public class JungleChestBlock extends WoodenChestBlock {
+public class JungleBarrelBlock extends WoodenBarrelBlock {
     @Override
     public WoodType getWoodType() {
         return WoodType.JUNGLE;

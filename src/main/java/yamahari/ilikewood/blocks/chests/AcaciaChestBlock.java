@@ -1,4 +1,4 @@
-package yamahari.ilikewood.blocks;
+package yamahari.ilikewood.blocks.chests;
 
 import yamahari.ilikewood.util.WoodType;
 

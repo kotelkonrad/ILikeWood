@@ -1,4 +1,4 @@
-package yamahari.ilikewood.blocks;
+package yamahari.ilikewood.blocks.barrel;
 
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
