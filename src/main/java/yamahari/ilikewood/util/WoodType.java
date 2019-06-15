@@ -2,7 +2,7 @@ package yamahari.ilikewood.util;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum WoodenChestType implements IStringSerializable {
+public enum WoodType implements IStringSerializable {
     OAK("oak"),
     DARK_OAK("dark_oak"),
     SPRUCE("spruce"),
@@ -10,10 +10,10 @@ public enum WoodenChestType implements IStringSerializable {
     ACACIA("acacia"),
     JUNGLE("jungle");
 
-    public static final WoodenChestType[] VALUES = values();
+    public static final WoodType[] VALUES = values();
     private final String name;
 
-    private WoodenChestType(String name) {
+    private WoodType(String name) {
         this.name = name;
     }
 
