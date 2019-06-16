@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "top": "ilikewood:block/acacia_barrel_top_open",
-    "side": "ilikewood:block/acacia_barrel_side",
-    "bottom": "ilikewood:block/acacia_barrel_bottom"
-  }
-}

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "ilikewood:block/oak_bookshelf" }
+        "": { "model": "ilikewood:block/bookshelf/oak" }
     }
 }

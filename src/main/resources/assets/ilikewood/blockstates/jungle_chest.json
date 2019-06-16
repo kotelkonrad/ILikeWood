@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "ilikewood:block/jungle_chest" }
+        "": { "model": "ilikewood:block/chest/jungle" }
     }
 }

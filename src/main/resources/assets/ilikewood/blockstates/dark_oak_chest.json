@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "ilikewood:block/dark_oak_chest" }
+        "": { "model": "ilikewood:block/chest/dark_oak" }
     }
 }

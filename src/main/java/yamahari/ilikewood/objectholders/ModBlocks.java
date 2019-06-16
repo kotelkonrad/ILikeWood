@@ -34,4 +34,11 @@ public class ModBlocks {
     public static final Block birch_bookshelf = null;
     public static final Block jungle_bookshelf = null;
     public static final Block acacia_bookshelf = null;
+
+    public static final Block oak_crafting_table = null;
+    public static final Block dark_oak_crafting_table = null;
+    public static final Block spruce_crafting_table = null;
+    public static final Block birch_crafting_table = null;
+    public static final Block jungle_crafting_table = null;
+    public static final Block acacia_crafting_table = null;
 }

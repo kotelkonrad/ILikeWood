@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "ilikewood:block/birch_chest" }
+        "": { "model": "ilikewood:block/chest/birch" }
     }
 }

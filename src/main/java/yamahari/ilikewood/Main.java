@@ -3,7 +3,6 @@ package yamahari.ilikewood;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.EnchantingTableBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -21,7 +20,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.BookshelfBlock;
 import yamahari.ilikewood.blocks.barrel.*;
-import yamahari.ilikewood.blocks.chests.*;
+import yamahari.ilikewood.blocks.chest.*;
+import yamahari.ilikewood.blocks.craftingtable.WoodenCraftingTable;
 import yamahari.ilikewood.objectholders.ModBlocks;
 import yamahari.ilikewood.tileentities.barrel.*;
 import yamahari.ilikewood.tileentities.chest.*;
@@ -83,6 +83,7 @@ public class Main {
 
             for(WoodType woodType : WoodType.values()) {
                 event.getRegistry().register(new BookshelfBlock().setRegistryName(woodType.getName() + "_bookshelf"));
+                event.getRegistry().register(new WoodenCraftingTable().setRegistryName(woodType.getName() + "_crafting_table"));
             }
         }
 
@@ -115,7 +116,14 @@ public class Main {
                 new BlockItem(ModBlocks.spruce_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_bookshelf"),
                 new BlockItem(ModBlocks.birch_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_bookshelf"),
                 new BlockItem(ModBlocks.jungle_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_bookshelf"),
-                new BlockItem(ModBlocks.acacia_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_bookshelf")
+                new BlockItem(ModBlocks.acacia_bookshelf, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_bookshelf"),
+
+                new BlockItem(ModBlocks.oak_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_crafting_table"),
+                new BlockItem(ModBlocks.dark_oak_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_crafting_table"),
+                new BlockItem(ModBlocks.spruce_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_crafting_table"),
+                new BlockItem(ModBlocks.birch_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_crafting_table"),
+                new BlockItem(ModBlocks.jungle_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_crafting_table"),
+                new BlockItem(ModBlocks.acacia_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_crafting_table")
             );
         }
 

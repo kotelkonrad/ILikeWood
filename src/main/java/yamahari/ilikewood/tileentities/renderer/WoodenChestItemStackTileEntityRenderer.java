@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
-import yamahari.ilikewood.blocks.chests.WoodenChestBlock;
+import yamahari.ilikewood.blocks.chest.WoodenChestBlock;
 import yamahari.ilikewood.tileentities.chest.*;
 
 public class WoodenChestItemStackTileEntityRenderer extends ItemStackTileEntityRenderer {

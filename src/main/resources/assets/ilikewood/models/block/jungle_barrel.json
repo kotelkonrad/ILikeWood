@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "top": "ilikewood:block/jungle_barrel_top",
-    "side": "ilikewood:block/jungle_barrel_side",
-    "bottom": "ilikewood:block/jungle_barrel_bottom"
-  }
-}

@@ -23,7 +23,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import yamahari.ilikewood.blocks.chests.WoodenChestBlock;
+import yamahari.ilikewood.blocks.chest.WoodenChestBlock;
 import yamahari.ilikewood.util.WoodType;
 
 public class WoodenChestTileEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
