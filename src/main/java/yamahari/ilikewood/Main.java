@@ -4,10 +4,14 @@ package yamahari.ilikewood;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.WallBlock;
+import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,7 +26,10 @@ import yamahari.ilikewood.blocks.BookshelfBlock;
 import yamahari.ilikewood.blocks.barrel.*;
 import yamahari.ilikewood.blocks.chest.*;
 import yamahari.ilikewood.blocks.craftingtable.*;
+import yamahari.ilikewood.container.WoodenWorkbenchContainer;
+import yamahari.ilikewood.gui.screen.WoodenCraftingScreen;
 import yamahari.ilikewood.objectholders.ModBlocks;
+import yamahari.ilikewood.objectholders.ModContainerType;
 import yamahari.ilikewood.tileentities.barrel.*;
 import yamahari.ilikewood.tileentities.chest.*;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
@@ -52,6 +59,13 @@ public class Main {
         ClientRegistry.bindTileEntitySpecialRenderer(BirchChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
         ClientRegistry.bindTileEntitySpecialRenderer(JungleChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
         ClientRegistry.bindTileEntitySpecialRenderer(AcaciaChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+
+        ScreenManager.registerFactory(ModContainerType.wooden_workbench_container, new ScreenManager.IScreenFactory<WoodenWorkbenchContainer, WoodenCraftingScreen>() {
+            @Override
+            public WoodenCraftingScreen create(WoodenWorkbenchContainer p_create_1_, PlayerInventory p_create_2_, ITextComponent p_create_3_) {
+                return new WoodenCraftingScreen(p_create_1_, p_create_2_, p_create_3_);
+            }
+        });
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -134,7 +148,7 @@ public class Main {
         }
 
         @SubscribeEvent
-        public static void onRegisterTileEntity(final RegistryEvent.Register<TileEntityType<?>> event) {
+        public static void onRegisterTileEntityType(final RegistryEvent.Register<TileEntityType<?>> event) {
             event.getRegistry().registerAll(
                 TileEntityType.Builder.create(OakBarrelTileEntity::new, ModBlocks.oak_barrel).build(null).setRegistryName("oak_barrel"),
                 TileEntityType.Builder.create(DarkOakBarrelTileEntity::new, ModBlocks.dark_oak_barrel).build(null).setRegistryName("dark_oak_barrel"),
@@ -150,6 +164,16 @@ public class Main {
                 TileEntityType.Builder.create(JungleChestTileEntity::new, ModBlocks.jungle_chest).build(null).setRegistryName("jungle_chest"),
                 TileEntityType.Builder.create(AcaciaChestTileEntity::new, ModBlocks.acacia_chest).build(null).setRegistryName("acacia_chest")
             );
+        }
+
+        @SubscribeEvent
+        public static void onRegisterContainerType(final RegistryEvent.Register<ContainerType<?>> event) {
+            event.getRegistry().register(new ContainerType<>(new ContainerType.IFactory<WoodenWorkbenchContainer>() {
+                @Override
+                public WoodenWorkbenchContainer create(int p_create_1_, PlayerInventory p_create_2_) {
+                    return new WoodenWorkbenchContainer(p_create_1_, p_create_2_);
+                }
+            }).setRegistryName("wooden_workbench_container"));
         }
     }
 }

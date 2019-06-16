@@ -39,5 +39,12 @@
   "block.ilikewood.spruce_bookshelf": "Spruce Bookshelf",
   "block.ilikewood.birch_bookshelf": "Birch Bookshelf",
   "block.ilikewood.jungle_bookshelf": "Jungle Bookshelf",
-  "block.ilikewood.acacia_bookshelf": "Acacia Bookshelf"
+  "block.ilikewood.acacia_bookshelf": "Acacia Bookshelf",
+
+  "container.ilikewood.oak_crafting": "Oak Crafting Table",
+  "container.ilikewood.dark_oak_crafting": "Dark Oak Crafting Table",
+  "container.ilikewood.spruce_crafting": "Spruce Crafting Table",
+  "container.ilikewood.birch_crafting": "Birch Crafting Table",
+  "container.ilikewood.jungle_crafting": "Jungle Crafting Table",
+  "container.ilikewood.acacia_crafting": "Acacia Crafting Table"
 }

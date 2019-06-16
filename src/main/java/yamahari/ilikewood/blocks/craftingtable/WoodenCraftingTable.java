@@ -4,13 +4,13 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
-import net.minecraft.inventory.container.WorkbenchContainer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import yamahari.ilikewood.container.WoodenWorkbenchContainer;
 import yamahari.ilikewood.util.WoodType;
 
 public abstract class WoodenCraftingTable extends CraftingTableBlock {
@@ -56,7 +56,7 @@ public abstract class WoodenCraftingTable extends CraftingTableBlock {
         }
 
         return new SimpleNamedContainerProvider((p_220270_2_, p_220270_3_, p_220270_4_) -> {
-            return new WorkbenchContainer(p_220270_2_, p_220270_3_, IWorldPosCallable.of(p_220052_2_, p_220052_3_));
+            return new WoodenWorkbenchContainer(p_220270_2_, p_220270_3_, IWorldPosCallable.of(p_220052_2_, p_220052_3_));
         }, textComponent);
     }
 
