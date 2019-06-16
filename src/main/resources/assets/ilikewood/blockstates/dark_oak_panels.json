@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "ilikewood:block/panels/dark_oak" },
+        "axis=z": { "model": "ilikewood:block/panels/dark_oak", "x": 90 },
+        "axis=x": { "model": "ilikewood:block/panels/dark_oak", "x": 90, "y": 90 }
+    }
+}

@@ -1,13 +1,13 @@
 package yamahari.ilikewood;
 
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.WallBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
@@ -99,7 +99,14 @@ public class Main {
                 new SpruceCraftingTable().setRegistryName("spruce_crafting_table"),
                 new BirchCraftingTable().setRegistryName("birch_crafting_table"),
                 new JungleCraftingTable().setRegistryName("jungle_crafting_table"),
-                new AcaciaCraftingTable().setRegistryName("acacia_crafting_table")
+                new AcaciaCraftingTable().setRegistryName("acacia_crafting_table"),
+
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("oak_panels"),
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("dark_oak_panels"),
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("spruce_panels"),
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("birch_panels"),
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("jungle_panels"),
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("acacia_panels")
             );
 
             for(WoodType woodType : WoodType.values()) {
@@ -143,7 +150,14 @@ public class Main {
                 new BlockItem(ModBlocks.spruce_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_crafting_table"),
                 new BlockItem(ModBlocks.birch_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_crafting_table"),
                 new BlockItem(ModBlocks.jungle_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_crafting_table"),
-                new BlockItem(ModBlocks.acacia_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_crafting_table")
+                new BlockItem(ModBlocks.acacia_crafting_table, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_crafting_table"),
+
+                new BlockItem(ModBlocks.oak_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_panels"),
+                new BlockItem(ModBlocks.dark_oak_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_panels"),
+                new BlockItem(ModBlocks.spruce_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_panels"),
+                new BlockItem(ModBlocks.birch_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_panels"),
+                new BlockItem(ModBlocks.jungle_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_panels"),
+                new BlockItem(ModBlocks.acacia_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_panels")
             );
         }
 

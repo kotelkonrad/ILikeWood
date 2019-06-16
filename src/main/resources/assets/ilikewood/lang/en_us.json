@@ -53,5 +53,12 @@
   "block.ilikewood.spruce_crafting_table": "Spruce Crafting Table",
   "block.ilikewood.birch_crafting_table": "Birch Crafting Table",
   "block.ilikewood.jungle_crafting_table": "Jungle Crafting Table",
-  "block.ilikewood.acacia_crafting_table": "Acacia Crafting Table"
+  "block.ilikewood.acacia_crafting_table": "Acacia Crafting Table",
+
+  "block.ilikewood.oak_panels": "Oak Panels",
+  "block.ilikewood.dark_oak_panels": "Dark Oak Panels",
+  "block.ilikewood.spruce_panels": "Spruce Panels",
+  "block.ilikewood.birch_panels": "Birch Panels",
+  "block.ilikewood.jungle_panels": "Jungle Panels",
+  "block.ilikewood.acacia_panels": "Acacia Panels"
 }
