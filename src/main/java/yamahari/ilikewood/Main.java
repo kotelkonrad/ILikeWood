@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.BookshelfBlock;
 import yamahari.ilikewood.blocks.barrel.*;
 import yamahari.ilikewood.blocks.chest.*;
-import yamahari.ilikewood.blocks.craftingtable.WoodenCraftingTable;
+import yamahari.ilikewood.blocks.craftingtable.*;
 import yamahari.ilikewood.objectholders.ModBlocks;
 import yamahari.ilikewood.tileentities.barrel.*;
 import yamahari.ilikewood.tileentities.chest.*;
@@ -78,12 +78,18 @@ public class Main {
                 new SpruceChestBlock().setRegistryName("spruce_chest"),
                 new BirchChestBlock().setRegistryName("birch_chest"),
                 new JungleChestBlock().setRegistryName("jungle_chest"),
-                new AcaciaChestBlock().setRegistryName("acacia_chest")
+                new AcaciaChestBlock().setRegistryName("acacia_chest"),
+
+                new OakCraftingTable().setRegistryName("oak_crafting_table"),
+                new DarkOakCraftingTable().setRegistryName("dark_oak_crafting_table"),
+                new SpruceCraftingTable().setRegistryName("spruce_crafting_table"),
+                new BirchCraftingTable().setRegistryName("birch_crafting_table"),
+                new JungleCraftingTable().setRegistryName("jungle_crafting_table"),
+                new AcaciaCraftingTable().setRegistryName("acacia_crafting_table")
             );
 
             for(WoodType woodType : WoodType.values()) {
                 event.getRegistry().register(new BookshelfBlock().setRegistryName(woodType.getName() + "_bookshelf"));
-                event.getRegistry().register(new WoodenCraftingTable().setRegistryName(woodType.getName() + "_crafting_table"));
             }
         }
 
