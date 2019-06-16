@@ -1,5 +1,4 @@
-{   
-	"parent": "block/block",
+{   "parent": "block/block",
     "textures": {
         "particle": "#planks",
         "top_overlay": "ilikewood:block/crafting_table/top",
