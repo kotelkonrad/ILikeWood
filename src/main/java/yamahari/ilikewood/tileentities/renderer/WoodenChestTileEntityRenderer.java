@@ -109,7 +109,7 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
             }
         }
         else {
-            lvt_4_5_ = p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
+            lvt_4_5_ = !p_199347_3_ ? TEXTURE_OAK : TEXTURE_OAK_DOUBLE;
         }
 
         this.bindTexture(lvt_4_5_);
