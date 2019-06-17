@@ -7,7 +7,6 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
@@ -64,9 +63,7 @@ public class WoodenBeamBlock extends DirectionalBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext p_196258_1_) {
-        Direction lvt_2_1_ = p_196258_1_.getFace();
-        BlockState lvt_3_1_ = p_196258_1_.getWorld().getBlockState(p_196258_1_.getPos().offset(lvt_2_1_.getOpposite()));
-        return lvt_3_1_.getBlock() == this && lvt_3_1_.get(FACING) == lvt_2_1_ ? (BlockState)this.getDefaultState().with(FACING, lvt_2_1_.getOpposite()) : (BlockState)this.getDefaultState().with(FACING, lvt_2_1_);
+        return (BlockState)this.getDefaultState().with(FACING, p_196258_1_.getFace());
     }
 
     @Override
