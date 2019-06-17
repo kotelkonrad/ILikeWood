@@ -48,4 +48,6 @@ public class ModItems {
     public static final Item birch_panels = null;
     public static final Item jungle_panels = null;
     public static final Item acacia_panels = null;
+
+    public static final Item oak_beam = null;
 }

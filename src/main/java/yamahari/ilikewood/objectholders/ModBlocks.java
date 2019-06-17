@@ -48,4 +48,6 @@ public class ModBlocks {
     public static final Block birch_panels = null;
     public static final Block jungle_panels = null;
     public static final Block acacia_panels = null;
+
+    public static final Block oak_beam = null;
 }

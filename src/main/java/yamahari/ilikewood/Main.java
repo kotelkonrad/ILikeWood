@@ -7,7 +7,6 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
@@ -23,6 +22,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.BookshelfBlock;
+import yamahari.ilikewood.blocks.WoodenBeamBlock;
 import yamahari.ilikewood.blocks.barrel.*;
 import yamahari.ilikewood.blocks.chest.*;
 import yamahari.ilikewood.blocks.craftingtable.*;
@@ -112,6 +112,8 @@ public class Main {
             for(WoodType woodType : WoodType.values()) {
                 event.getRegistry().register(new BookshelfBlock().setRegistryName(woodType.getName() + "_bookshelf"));
             }
+
+            event.getRegistry().register(new WoodenBeamBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_beam"));
         }
 
         @SubscribeEvent
@@ -159,6 +161,7 @@ public class Main {
                 new BlockItem(ModBlocks.jungle_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_panels"),
                 new BlockItem(ModBlocks.acacia_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_panels")
             );
+            event.getRegistry().register(new BlockItem(ModBlocks.oak_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_beam"));
         }
 
         @SubscribeEvent
