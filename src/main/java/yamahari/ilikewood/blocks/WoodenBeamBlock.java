@@ -18,8 +18,8 @@ import net.minecraft.world.IBlockReader;
 
 public class WoodenBeamBlock extends DirectionalBlock {
     protected static final VoxelShape WOODEN_BEAM_VERTICAL_AABB = Block.makeCuboidShape(4.f, 0.f, 4.f, 12.f, 16.f, 12.f);
-    protected static final VoxelShape WOODEN_BEAM_NS_AABB = Block.makeCuboidShape(4.f, 4.f, 0.f, 12.f, 12.f, 0.f);
-    protected static final VoxelShape WOODEN_BEAM_EW_AABB = Block.makeCuboidShape(0.f, 4.f, 4.f, 0.f, 12.f, 12.f);
+    protected static final VoxelShape WOODEN_BEAM_NS_AABB = Block.makeCuboidShape(4.f, 4.f, 0.f, 12.f, 12.f, 16.f);
+    protected static final VoxelShape WOODEN_BEAM_EW_AABB = Block.makeCuboidShape(0.f, 4.f, 4.f, 16.f, 12.f, 12.f);
 
     public WoodenBeamBlock(Block.Properties properties) {
         super(properties);
@@ -38,6 +38,19 @@ public class WoodenBeamBlock extends DirectionalBlock {
 
     @Override
     public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
+        switch (((Direction) p_220053_1_.get(FACING)).getAxis()) {
+            case X:
+            default:
+                return WOODEN_BEAM_EW_AABB;
+            case Z:
+                return WOODEN_BEAM_NS_AABB;
+            case Y:
+                return WOODEN_BEAM_VERTICAL_AABB;
+        }
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
         switch (((Direction) p_220053_1_.get(FACING)).getAxis()) {
             case X:
             default:

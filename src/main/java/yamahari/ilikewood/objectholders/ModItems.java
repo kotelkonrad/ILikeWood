@@ -50,4 +50,9 @@ public class ModItems {
     public static final Item acacia_panels = null;
 
     public static final Item oak_beam = null;
+    public static final Item dark_oak_beam = null;
+    public static final Item spruce_beam = null;
+    public static final Item birch_beam = null;
+    public static final Item jungle_beam = null;
+    public static final Item acacia_beam = null;
 }

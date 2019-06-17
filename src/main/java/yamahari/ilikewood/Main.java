@@ -106,14 +106,19 @@ public class Main {
                 new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("spruce_panels"),
                 new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("birch_panels"),
                 new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("jungle_panels"),
-                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("acacia_panels")
+                new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName("acacia_panels"),
+
+                new WoodenBeamBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_beam"),
+                new WoodenBeamBlock(Block.Properties.from(Blocks.DARK_OAK_LOG)).setRegistryName("dark_oak_beam"),
+                new WoodenBeamBlock(Block.Properties.from(Blocks.SPRUCE_LOG)).setRegistryName("spruce_beam"),
+                new WoodenBeamBlock(Block.Properties.from(Blocks.BIRCH_LOG)).setRegistryName("birch_beam"),
+                new WoodenBeamBlock(Block.Properties.from(Blocks.JUNGLE_LOG)).setRegistryName("jungle_beam"),
+                new WoodenBeamBlock(Block.Properties.from(Blocks.ACACIA_LOG)).setRegistryName("acacia_beam")
             );
 
             for(WoodType woodType : WoodType.values()) {
                 event.getRegistry().register(new BookshelfBlock().setRegistryName(woodType.getName() + "_bookshelf"));
             }
-
-            event.getRegistry().register(new WoodenBeamBlock(Block.Properties.from(Blocks.OAK_LOG)).setRegistryName("oak_beam"));
         }
 
         @SubscribeEvent
@@ -159,9 +164,15 @@ public class Main {
                 new BlockItem(ModBlocks.spruce_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_panels"),
                 new BlockItem(ModBlocks.birch_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_panels"),
                 new BlockItem(ModBlocks.jungle_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_panels"),
-                new BlockItem(ModBlocks.acacia_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_panels")
+                new BlockItem(ModBlocks.acacia_panels, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_panels"),
+
+                new BlockItem(ModBlocks.oak_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_beam"),
+                new BlockItem(ModBlocks.dark_oak_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("dark_oak_beam"),
+                new BlockItem(ModBlocks.spruce_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("spruce_beam"),
+                new BlockItem(ModBlocks.birch_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("birch_beam"),
+                new BlockItem(ModBlocks.jungle_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("jungle_beam"),
+                new BlockItem(ModBlocks.acacia_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("acacia_beam")
             );
-            event.getRegistry().register(new BlockItem(ModBlocks.oak_beam, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName("oak_beam"));
         }
 
         @SubscribeEvent
