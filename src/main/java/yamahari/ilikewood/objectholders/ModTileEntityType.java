@@ -2,8 +2,8 @@ package yamahari.ilikewood.objectholders;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.registries.ObjectHolder;
-import yamahari.ilikewood.tileentities.barrel.WoodenBarrelTileEntity;
-import yamahari.ilikewood.tileentities.chest.WoodenChestTileEntity;
+import yamahari.ilikewood.tileentities.WoodenBarrelTileEntity;
+import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
 import yamahari.ilikewood.util.Constants;
 
 @ObjectHolder(Constants.MOD_ID)

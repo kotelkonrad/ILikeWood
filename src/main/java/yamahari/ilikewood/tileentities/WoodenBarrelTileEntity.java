@@ -1,4 +1,4 @@
-package yamahari.ilikewood.tileentities.barrel;
+package yamahari.ilikewood.tileentities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,11 +12,10 @@ import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.*;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import yamahari.ilikewood.blocks.barrel.WoodenBarrelBlock;
+import yamahari.ilikewood.blocks.WoodenBarrelBlock;
 import yamahari.ilikewood.util.WoodType;
 
 import java.util.Iterator;
@@ -26,15 +25,16 @@ public class WoodenBarrelTileEntity extends LockableLootTileEntity {
     private int field_213967_b;
     private WoodType woodType;
 
+    public WoodenBarrelTileEntity(TileEntityType<?> p_i49963_1_, WoodType woodType) {
+        this(p_i49963_1_);
+        this.woodType = woodType;
+    }
+
     private WoodenBarrelTileEntity(TileEntityType<?> p_i49963_1_) {
         super(p_i49963_1_);
         this.field_213966_a = NonNullList.withSize(27, ItemStack.EMPTY);
     }
 
-    public WoodenBarrelTileEntity(TileEntityType<?> p_i49963_1_, WoodType woodType) {
-        this(p_i49963_1_);
-        this.woodType = woodType;
-    }
 
     public CompoundNBT write(CompoundNBT p_189515_1_) {
         super.write(p_189515_1_);
@@ -106,7 +106,7 @@ public class WoodenBarrelTileEntity extends LockableLootTileEntity {
     }
 
     protected ITextComponent getDefaultName() {
-        switch (woodType) {
+        switch (this.woodType) {
             case OAK:
             default:
                 return new TranslationTextComponent("container.ilikewood.oak_barrel");

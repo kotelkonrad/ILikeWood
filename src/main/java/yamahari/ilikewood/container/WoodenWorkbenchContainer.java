@@ -19,7 +19,7 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import yamahari.ilikewood.blocks.craftingtable.WoodenCraftingTable;
+import yamahari.ilikewood.blocks.WoodenCraftingTable;
 import yamahari.ilikewood.objectholders.ModContainerType;
 
 import java.util.Optional;

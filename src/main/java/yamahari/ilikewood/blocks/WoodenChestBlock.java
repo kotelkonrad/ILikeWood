@@ -1,4 +1,4 @@
-package yamahari.ilikewood.blocks.chest;
+package yamahari.ilikewood.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,6 +17,7 @@ import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -24,21 +25,30 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import yamahari.ilikewood.tileentities.chest.*;
+import yamahari.ilikewood.objectholders.ModTileEntityType;
+import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
+import yamahari.ilikewood.util.IWooden;
 import yamahari.ilikewood.util.WoodType;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class WoodenChestBlock extends ChestBlock {
+public class WoodenChestBlock extends ChestBlock implements IWooden {
     private static final WoodenChestBlock.InventoryFactory<IInventory> field_220109_i;
     private static final WoodenChestBlock.InventoryFactory<INamedContainerProvider> field_220110_j;
-    public WoodenChestBlock() {
+    private final WoodType woodType;
+
+    public WoodenChestBlock(WoodType woodType) {
         super(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5f).sound(SoundType.WOOD));
+        this.woodType = woodType;
     }
 
-    public abstract WoodType getWoodType();
+
+    @Override
+    public WoodType getWoodType() {
+        return this.woodType;
+    }
 
     private static boolean isBlocked(IWorld p_220108_0_, BlockPos p_220108_1_) {
         return isBelowSolidBlock(p_220108_0_, p_220108_1_) || isCatSittingOn(p_220108_0_, p_220108_1_);
@@ -129,23 +139,27 @@ public abstract class WoodenChestBlock extends ChestBlock {
         return Container.calcRedstoneFromInventory(getInventory(p_180641_1_, p_180641_2_, p_180641_3_, false));
     }
 
-    @Override
-    public TileEntity createNewTileEntity(IBlockReader p_196283_1_) {
+    public TileEntityType<WoodenChestTileEntity> getTileEntityType() {
         switch (this.getWoodType()) {
             case OAK:
             default:
-                return new OakChestTileEntity();
+                return ModTileEntityType.oak_chest;
             case DARK_OAK:
-                return new DarkOakChestTileEntity();
+                return ModTileEntityType.dark_oak_chest;
             case SPRUCE:
-                return new SpruceChestTileEntity();
+                return ModTileEntityType.spruce_chest;
             case BIRCH:
-                return new BirchChestTileEntity();
+                return ModTileEntityType.birch_chest;
             case ACACIA:
-                return new AcaciaChestTileEntity();
+                return ModTileEntityType.acacia_chest;
             case JUNGLE:
-                return new JungleChestTileEntity();
+                return ModTileEntityType.jungle_chest;
         }
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(IBlockReader p_196283_1_) {
+        return new WoodenChestTileEntity(this.getTileEntityType(), this.getWoodType());
     }
 
     static {

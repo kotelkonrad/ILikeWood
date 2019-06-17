@@ -1,6 +1,5 @@
 package yamahari.ilikewood.objectholders;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 import yamahari.ilikewood.util.Constants;

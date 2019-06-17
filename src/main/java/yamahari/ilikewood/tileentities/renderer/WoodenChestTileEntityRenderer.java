@@ -11,9 +11,9 @@ import net.minecraft.tileentity.IChestLid;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
-import yamahari.ilikewood.blocks.chest.WoodenChestBlock;
+import yamahari.ilikewood.blocks.WoodenChestBlock;
 import yamahari.ilikewood.objectholders.ModBlocks;
-import yamahari.ilikewood.tileentities.chest.WoodenChestTileEntity;
+import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
 import yamahari.ilikewood.util.Constants;
 
 public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> extends TileEntityRenderer<T> {

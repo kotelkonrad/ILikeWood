@@ -7,8 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 
-public class BookshelfBlock extends Block {
-    public BookshelfBlock() {
+public class WoodenBookshelfBlock extends Block {
+    public WoodenBookshelfBlock() {
         super(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.5f).sound(SoundType.WOOD));
     }
 

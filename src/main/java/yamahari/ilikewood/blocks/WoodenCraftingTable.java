@@ -1,4 +1,4 @@
-package yamahari.ilikewood.blocks.craftingtable;
+package yamahari.ilikewood.blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -11,9 +11,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
+import yamahari.ilikewood.util.IWooden;
 import yamahari.ilikewood.util.WoodType;
 
-public abstract class WoodenCraftingTable extends CraftingTableBlock {
+public class WoodenCraftingTable extends CraftingTableBlock implements IWooden {
     private static final ITextComponent OAK = new TranslationTextComponent("container.ilikewood.oak_crafting");
     private static final ITextComponent DARK_OAK = new TranslationTextComponent("container.ilikewood.dark_oak_crafting");
     private static final ITextComponent SPRUCE = new TranslationTextComponent("container.ilikewood.spruce_crafting");
@@ -21,8 +22,11 @@ public abstract class WoodenCraftingTable extends CraftingTableBlock {
     private static final ITextComponent JUNGLE = new TranslationTextComponent("container.ilikewood.jungle_crafting");
     private static final ITextComponent ACACIA = new TranslationTextComponent("container.ilikewood.acacia_crafting");
 
-    public WoodenCraftingTable() {
+    private final WoodType woodType;
+
+    public WoodenCraftingTable(WoodType woodType) {
         super(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5f).sound(SoundType.WOOD));
+        this.woodType = woodType;
     }
 
     @Override
@@ -60,5 +64,8 @@ public abstract class WoodenCraftingTable extends CraftingTableBlock {
         }, textComponent);
     }
 
-    public abstract WoodType getWoodType();
+    @Override
+    public WoodType getWoodType() {
+        return this.woodType;
+    }
 }

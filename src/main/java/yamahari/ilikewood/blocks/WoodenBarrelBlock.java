@@ -1,29 +1,31 @@
-package yamahari.ilikewood.blocks.barrel;
+package yamahari.ilikewood.blocks;
 
-import net.minecraft.block.BarrelBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import yamahari.ilikewood.tileentities.barrel.*;
+import yamahari.ilikewood.objectholders.ModTileEntityType;
+import yamahari.ilikewood.tileentities.WoodenBarrelTileEntity;
+import yamahari.ilikewood.util.IWooden;
 import yamahari.ilikewood.util.WoodType;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class WoodenBarrelBlock extends BarrelBlock {
-    public WoodenBarrelBlock() {
-        super(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5f).sound(SoundType.WOOD));
+public class WoodenBarrelBlock extends BarrelBlock implements IWooden {
+    private final WoodType woodType;
+
+    public WoodenBarrelBlock(WoodType woodType) {
+        super(Block.Properties.from(Blocks.BARREL));
+        this.woodType = woodType;
     }
 
     @Override
@@ -41,25 +43,28 @@ public abstract class WoodenBarrelBlock extends BarrelBlock {
         }
     }
 
+    public TileEntityType<WoodenBarrelTileEntity> getTileEntityType() {
+        switch (this.getWoodType()) {
+            case OAK:
+            default:
+                return ModTileEntityType.oak_barrel;
+            case DARK_OAK:
+                return ModTileEntityType.dark_oak_barrel;
+            case SPRUCE:
+                return ModTileEntityType.spruce_barrel;
+            case BIRCH:
+                return ModTileEntityType.birch_barrel;
+            case ACACIA:
+                return ModTileEntityType.acacia_barrel;
+            case JUNGLE:
+                return ModTileEntityType.jungle_barrel;
+        }
+    }
+
     @Nullable
     @Override
     public TileEntity createNewTileEntity(IBlockReader p_196283_1_) {
-        switch (this.getWoodType()) {
-
-            case OAK:
-            default:
-                return new OakBarrelTileEntity();
-            case DARK_OAK:
-                return new DarkOakBarrelTileEntity();
-            case SPRUCE:
-                return new SpruceBarrelTileEntity();
-            case BIRCH:
-                return new BirchBarrelTileEntity();
-            case ACACIA:
-                return new AcaciaBarrelTileEntity();
-            case JUNGLE:
-                return new JungleBarrelTileEntity();
-        }
+        return new WoodenBarrelTileEntity(this.getTileEntityType(), this.getWoodType());
     }
 
     @Override
@@ -82,5 +87,8 @@ public abstract class WoodenBarrelBlock extends BarrelBlock {
 
     }
 
-    public abstract WoodType getWoodType();
+    @Override
+    public WoodType getWoodType() {
+        return this.woodType;
+    }
 }
