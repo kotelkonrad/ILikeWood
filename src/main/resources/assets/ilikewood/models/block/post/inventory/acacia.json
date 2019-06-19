@@ -1,5 +1,5 @@
 {
-    "parent": "ilikewood:block/post/template",
+    "parent": "ilikewood:block/post/inventory/template",
     "textures": {
         "wall": "block/acacia_log"
     }

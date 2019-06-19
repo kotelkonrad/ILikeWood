@@ -1,6 +1,0 @@
-{
-    "parent": "ilikewood:block/beam/template",
-    "textures": {
-        "wall": "block/dark_oak_log"
-    }
-}
