@@ -55,4 +55,11 @@ public class ModBlocks {
     public static final Block birch_post = null;
     public static final Block jungle_post = null;
     public static final Block acacia_post = null;
+
+    public static final Block stripped_oak_post = null;
+    public static final Block stripped_dark_oak_post = null;
+    public static final Block stripped_spruce_post = null;
+    public static final Block stripped_birch_post = null;
+    public static final Block stripped_jungle_post = null;
+    public static final Block stripped_acacia_post = null;
 }

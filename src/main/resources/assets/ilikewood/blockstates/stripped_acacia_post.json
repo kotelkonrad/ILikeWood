@@ -1,0 +1,34 @@
+{
+	"multipart": [
+		{
+			"when": { "axis": "y" },
+			"apply": { "model": "ilikewood:block/post/stripped/acacia" }
+		},
+		{
+			"when": { "axis": "x" },
+			"apply": { "model": "ilikewood:block/post/stripped/acacia", "y": 90, "x": 90 }
+		},
+		{
+			"when": { "axis": "z" },
+			"apply": { "model": "ilikewood:block/post/stripped/acacia", "y": 0, "x": 90 }
+		},
+		{   "when": { "north": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia" }
+		},
+		{   "when": { "east": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia", "y": 90, "uvlock": false }
+		},
+		{   "when": { "south": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia", "y": 180, "uvlock": false }
+		},
+		{   "when": { "west": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia", "y": 270, "uvlock": false }
+		},
+		{   "when": { "up": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia", "x": 270, "uvlock": false }
+		},
+		{   "when": { "down": true },
+				"apply": { "model": "ilikewood:block/post/stripped/side/acacia", "x": 90, "uvlock": false }
+		}
+	]
+}

@@ -55,4 +55,11 @@ public class ModItems {
     public static final Item birch_post = null;
     public static final Item jungle_post = null;
     public static final Item acacia_post = null;
+
+    public static final Item stripped_oak_post = null;
+    public static final Item stripped_dark_oak_post = null;
+    public static final Item stripped_spruce_post = null;
+    public static final Item stripped_birch_post = null;
+    public static final Item stripped_jungle_post = null;
+    public static final Item stripped_acacia_post = null;
 }

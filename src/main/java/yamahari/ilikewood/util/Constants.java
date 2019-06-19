@@ -1,8 +1,12 @@
 package yamahari.ilikewood.util;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import yamahari.ilikewood.objectholders.ModBlocks;
+
+import java.util.Map;
 
 public class Constants {
     public static final String MOD_ID = "ilikewood";
@@ -56,6 +60,16 @@ public class Constants {
                     ModBlocks.acacia_post
             );
 
+    public static final ImmutableSet<Block> STRIPPED_POSTS =
+            ImmutableSet.of(
+                    ModBlocks.stripped_oak_post,
+                    ModBlocks.stripped_dark_oak_post,
+                    ModBlocks.stripped_spruce_post,
+                    ModBlocks.stripped_birch_post,
+                    ModBlocks.stripped_jungle_post,
+                    ModBlocks.stripped_acacia_post
+            );
+
     public static final ImmutableSet<Block> PANELS =
             ImmutableSet.of(
                     ModBlocks.oak_panels,
@@ -75,4 +89,15 @@ public class Constants {
                     ModBlocks.jungle_bookshelf,
                     ModBlocks.acacia_bookshelf
             );
+
+    public static final Map<Block, Block> POST_STRIPPING_MAP =
+            (new ImmutableMap.Builder<Block, Block>())
+                    .put(ModBlocks.oak_post, ModBlocks.stripped_oak_post)
+                    .put(ModBlocks.dark_oak_post, ModBlocks.stripped_dark_oak_post)
+                    .put(ModBlocks.spruce_post, ModBlocks.stripped_spruce_post)
+                    .put(ModBlocks.birch_post, ModBlocks.stripped_birch_post)
+                    .put(ModBlocks.jungle_post, ModBlocks.stripped_jungle_post)
+                    .put(ModBlocks.acacia_post, ModBlocks.stripped_acacia_post).build();
+
+
 }

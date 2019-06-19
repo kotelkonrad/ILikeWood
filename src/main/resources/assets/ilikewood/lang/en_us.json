@@ -67,5 +67,12 @@
   "block.ilikewood.spruce_post": "Spruce Post",
   "block.ilikewood.birch_post": "Birch Post",
   "block.ilikewood.jungle_post": "Jungle Post",
-  "block.ilikewood.acacia_post": "Acacia Post"
+  "block.ilikewood.acacia_post": "Acacia Post",
+	
+	"block.ilikewood.stripped_oak_post": "Stripped Oak Post",
+  "block.ilikewood.stripped_dark_oak_post": "Stripped Dark Oak Post",
+  "block.ilikewood.stripped_spruce_post": "Stripped Spruce Post",
+  "block.ilikewood.stripped_birch_post": "Stripped Birch Post",
+  "block.ilikewood.stripped_jungle_post": "Stripped Jungle Post",
+  "block.ilikewood.stripped_acacia_post": "Stripped Acacia Post"
 }

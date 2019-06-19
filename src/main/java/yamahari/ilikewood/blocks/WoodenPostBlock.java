@@ -2,6 +2,11 @@ package yamahari.ilikewood.blocks;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.fluid.IFluidState;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IProperty;
@@ -9,17 +14,20 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
+import yamahari.ilikewood.util.Constants;
 import yamahari.ilikewood.util.IWooden;
 import yamahari.ilikewood.util.WoodType;
 
 import java.util.Map;
 
 
-public class WoodenPostBlock extends RotatedPillarBlock implements IWooden {
+public class WoodenPostBlock extends RotatedPillarBlock implements IWooden, IWaterLoggable {
     protected static final VoxelShape WOODEN_POST_VERTICAL_AABB = Block.makeCuboidShape(4.f, 0.f, 4.f, 12.f, 16.f, 12.f);
     protected static final VoxelShape WOODEN_POST_NS_AABB = Block.makeCuboidShape(4.f, 4.f, 0.f, 12.f, 12.f, 16.f);
     protected static final VoxelShape WOODEN_POST_EW_AABB = Block.makeCuboidShape(0.f, 4.f, 4.f, 16.f, 12.f, 12.f);
@@ -30,12 +38,20 @@ public class WoodenPostBlock extends RotatedPillarBlock implements IWooden {
     public static final BooleanProperty UP;
     public static final BooleanProperty DOWN;
     public static final Map<Direction, BooleanProperty> FACING_TO_PROPERTY_MAP;
+
+    public static final BooleanProperty WATERLOGGED;
+
     private final WoodType woodType;
 
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> p_206840_1_) {
         super.fillStateContainer(p_206840_1_);
-        p_206840_1_.add(new IProperty[]{NORTH, EAST, SOUTH, WEST, UP, DOWN});
+        p_206840_1_.add(new IProperty[]{NORTH, EAST, SOUTH, WEST, UP, DOWN, WATERLOGGED});
+    }
+
+    @Override
+    public IFluidState getFluidState(BlockState p_204507_1_) {
+        return (Boolean)p_204507_1_.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(p_204507_1_);
     }
 
     @Override
@@ -43,9 +59,20 @@ public class WoodenPostBlock extends RotatedPillarBlock implements IWooden {
         return this.woodType;
     }
 
-    private WoodenPostBlock(Block.Properties properties, WoodType woodType) {
+    protected WoodenPostBlock(Block.Properties properties, WoodType woodType) {
         super(properties);
         this.woodType = woodType;
+        this.setDefaultState(
+            this.getDefaultState()
+                .with(AXIS, Direction.Axis.Y)
+                .with(WATERLOGGED, false)
+                .with(NORTH, false)
+                .with(EAST, false)
+                .with(SOUTH, false)
+                .with(WEST, false)
+                .with(UP, false)
+                .with(DOWN, false)
+        );
     }
 
     public static WoodenPostBlock builder(WoodType woodType) {
@@ -122,11 +149,36 @@ public class WoodenPostBlock extends RotatedPillarBlock implements IWooden {
     }
 
     @Override
+    public boolean onBlockActivated(BlockState p_220051_1_, World p_220051_2_, BlockPos p_220051_3_, PlayerEntity p_220051_4_, Hand p_220051_5_, BlockRayTraceResult p_220051_6_) {
+        if(p_220051_5_ == Hand.MAIN_HAND && p_220051_4_.getHeldItem(p_220051_5_).getItem() instanceof AxeItem && !(p_220051_1_.getBlock() instanceof WoodenStrippedPostBlock)) {
+
+            p_220051_2_.playSound(p_220051_4_, p_220051_3_, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            if(!p_220051_2_.isRemote()) {
+                p_220051_2_.setBlockState(p_220051_3_,
+                        Constants.POST_STRIPPING_MAP.get(p_220051_1_.getBlock()).getDefaultState()
+                                .with(AXIS, p_220051_1_.get(AXIS))
+                                .with(WATERLOGGED, p_220051_1_.get(WATERLOGGED))
+                                .with(DOWN, p_220051_1_.get(DOWN))
+                                .with(UP, p_220051_1_.get(UP))
+                                .with(NORTH, p_220051_1_.get(NORTH))
+                                .with(EAST, p_220051_1_.get(EAST))
+                                .with(SOUTH, p_220051_1_.get(SOUTH))
+                                .with(WEST, p_220051_1_.get(WEST)),
+                        11);
+                p_220051_4_.getHeldItem(p_220051_5_).attemptDamageItem(1, p_220051_2_.rand, (ServerPlayerEntity)p_220051_4_);
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
     static {
+        WATERLOGGED = BlockStateProperties.WATERLOGGED;
         NORTH = BlockStateProperties.NORTH;
         EAST = BlockStateProperties.EAST;
         SOUTH = BlockStateProperties.SOUTH;

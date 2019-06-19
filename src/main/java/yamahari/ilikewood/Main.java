@@ -68,7 +68,8 @@ public class Main {
                         new WoodenChestBlock(woodType).setRegistryName(woodType.getName() + "_chest"),
                         new WoodenCraftingTable(woodType).setRegistryName(woodType.getName() + "_crafting_table"),
                         new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels"),
-                        WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post")
+                        WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post"),
+                        WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post")
                 );
             }
         }
@@ -102,6 +103,10 @@ public class Main {
             }
 
             for(Block block : Constants.POSTS) {
+                registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.STRIPPED_POSTS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
         }
