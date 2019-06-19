@@ -46,14 +46,14 @@ public class Constants {
                     ModBlocks.acacia_crafting_table
             );
 
-    public static final ImmutableSet<Block> BEAMS =
+    public static final ImmutableSet<Block> POSTS =
             ImmutableSet.of(
-                    ModBlocks.oak_beam,
-                    ModBlocks.dark_oak_beam,
-                    ModBlocks.spruce_beam,
-                    ModBlocks.birch_beam,
-                    ModBlocks.jungle_beam,
-                    ModBlocks.acacia_beam
+                    ModBlocks.oak_post,
+                    ModBlocks.dark_oak_post,
+                    ModBlocks.spruce_post,
+                    ModBlocks.birch_post,
+                    ModBlocks.jungle_post,
+                    ModBlocks.acacia_post
             );
 
     public static final ImmutableSet<Block> PANELS =

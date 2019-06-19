@@ -60,5 +60,12 @@
   "block.ilikewood.spruce_panels": "Spruce Panels",
   "block.ilikewood.birch_panels": "Birch Panels",
   "block.ilikewood.jungle_panels": "Jungle Panels",
-  "block.ilikewood.acacia_panels": "Acacia Panels"
+  "block.ilikewood.acacia_panels": "Acacia Panels",
+
+  "block.ilikewood.oak_post": "Oak Post",
+  "block.ilikewood.dark_oak_post": "Dark Oak Post",
+  "block.ilikewood.spruce_post": "Spruce Post",
+  "block.ilikewood.birch_post": "Birch Post",
+  "block.ilikewood.jungle_post": "Jungle Post",
+  "block.ilikewood.acacia_post": "Acacia Post"
 }

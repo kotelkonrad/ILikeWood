@@ -5,7 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,7 +13,7 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -24,18 +23,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
-import yamahari.ilikewood.gui.screen.WoodenCraftingScreen;
-import yamahari.ilikewood.objectholders.ModContainerType;
+import yamahari.ilikewood.proxy.ClientProxy;
+import yamahari.ilikewood.proxy.CommonProxy;
+import yamahari.ilikewood.proxy.Proxy;
 import yamahari.ilikewood.tileentities.WoodenBarrelTileEntity;
 import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
-import yamahari.ilikewood.tileentities.renderer.WoodenChestTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
 import yamahari.ilikewood.util.WoodType;
 
 @Mod(Constants.MOD_ID)
 public class Main {
     public static final Logger logger = LogManager.getLogger(Constants.MOD_ID);
+
+    public static final Proxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
     public Main() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onFMLClientSetup);
@@ -45,13 +46,12 @@ public class Main {
 
     private void onFMLCommonSetup(final FMLCommonSetupEvent event) {
         logger.info(Constants.MOD_ID + " : common setup");
+        proxy.onCommonSetup(event);
     }
 
     private void onFMLClientSetup(final FMLClientSetupEvent event) {
         logger.info(Constants.MOD_ID + " : client setup");
-        ClientRegistry.bindTileEntitySpecialRenderer(WoodenChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
-
-        ScreenManager.registerFactory(ModContainerType.wooden_workbench_container, WoodenCraftingScreen::new);
+        proxy.onClientSetup(event);
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -67,8 +67,8 @@ public class Main {
                         new WoodenBarrelBlock(woodType).setRegistryName(woodType.getName() + "_barrel"),
                         new WoodenChestBlock(woodType).setRegistryName(woodType.getName() + "_chest"),
                         new WoodenCraftingTable(woodType).setRegistryName(woodType.getName() + "_crafting_table"),
-                        WoodenBeamBlock.builder(woodType).setRegistryName(woodType.getName() + "_beam"),
-                        new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels")
+                        new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels"),
+                        WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post")
                 );
             }
         }
@@ -93,16 +93,16 @@ public class Main {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
 
-            for(Block block : Constants.BEAMS) {
-                registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
-            }
-
             for(Block block : Constants.BOOKSHELFS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
             }
 
             for(Block block : Constants.PANELS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.POSTS) {
+                registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
         }
 

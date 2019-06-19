@@ -49,10 +49,10 @@ public class ModBlocks {
     public static final Block jungle_panels = null;
     public static final Block acacia_panels = null;
 
-    public static final Block oak_beam = null;
-    public static final Block dark_oak_beam = null;
-    public static final Block spruce_beam = null;
-    public static final Block birch_beam = null;
-    public static final Block jungle_beam = null;
-    public static final Block acacia_beam = null;
+    public static final Block oak_post = null;
+    public static final Block dark_oak_post = null;
+    public static final Block spruce_post = null;
+    public static final Block birch_post = null;
+    public static final Block jungle_post = null;
+    public static final Block acacia_post = null;
 }
