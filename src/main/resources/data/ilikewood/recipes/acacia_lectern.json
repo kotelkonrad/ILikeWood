@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:acacia_slab"
+    },
+    "B": {
+      "item": "ilikewood:acacia_bookshelf"
+    }
+  },
+  "result": {
+    "item": "ilikewood:acacia_lectern"
+  }
+}

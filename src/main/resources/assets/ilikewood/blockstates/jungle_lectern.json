@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "ilikewood:block/lectern/jungle" },
+        "facing=south": { "model": "ilikewood:block/lectern/jungle", "y": 180 },
+        "facing=west":  { "model": "ilikewood:block/lectern/jungle", "y": 270 },
+        "facing=east":  { "model": "ilikewood:block/lectern/jungle", "y": 90 }
+    }
+}

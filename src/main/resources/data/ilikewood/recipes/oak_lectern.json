@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:oak_slab"
+    },
+    "B": {
+      "item": "ilikewood:oak_bookshelf"
+    }
+  },
+  "result": {
+    "item": "ilikewood:oak_lectern"
+  }
+}

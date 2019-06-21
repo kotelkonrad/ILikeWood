@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:spruce_slab"
+    },
+    "B": {
+      "item": "ilikewood:spruce_bookshelf"
+    }
+  },
+  "result": {
+    "item": "ilikewood:spruce_lectern"
+  }
+}

@@ -7,12 +7,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import yamahari.ilikewood.gui.screen.WoodenCraftingScreen;
 import yamahari.ilikewood.objectholders.ModContainerType;
 import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
+import yamahari.ilikewood.tileentities.WoodenLecternTileEntity;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestTileEntityRenderer;
+import yamahari.ilikewood.tileentities.renderer.WoodenLecternTileEntityRenderer;
 
 public class ClientProxy implements Proxy {
     @Override
     public void onClientSetup(FMLClientSetupEvent event) {
         ClientRegistry.bindTileEntitySpecialRenderer(WoodenChestTileEntity.class, new WoodenChestTileEntityRenderer<>());
+        ClientRegistry.bindTileEntitySpecialRenderer(WoodenLecternTileEntity.class, new WoodenLecternTileEntityRenderer());
         ScreenManager.registerFactory(ModContainerType.wooden_workbench_container, WoodenCraftingScreen::new);
     }
 

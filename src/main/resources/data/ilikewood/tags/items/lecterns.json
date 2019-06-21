@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_lectern",
+    "ilikewood:dark_oak_lectern",
+    "ilikewood:spruce_lectern",
+    "ilikewood:birch_lectern",
+    "ilikewood:acacia_lectern",
+    "ilikewood:jungle_lectern"
+  ]
+}

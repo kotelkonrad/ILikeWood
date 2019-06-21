@@ -22,12 +22,14 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
+import yamahari.ilikewood.container.WoodenLecternContainer;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
 import yamahari.ilikewood.proxy.ClientProxy;
 import yamahari.ilikewood.proxy.CommonProxy;
 import yamahari.ilikewood.proxy.Proxy;
 import yamahari.ilikewood.tileentities.WoodenBarrelTileEntity;
 import yamahari.ilikewood.tileentities.WoodenChestTileEntity;
+import yamahari.ilikewood.tileentities.WoodenLecternTileEntity;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
 import yamahari.ilikewood.util.WoodType;
@@ -69,7 +71,8 @@ public class Main {
                         new WoodenCraftingTable(woodType).setRegistryName(woodType.getName() + "_crafting_table"),
                         new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels"),
                         WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post"),
-                        WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post")
+                        WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post"),
+                        new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern")
                 );
             }
         }
@@ -109,6 +112,10 @@ public class Main {
             for(Block block : Constants.STRIPPED_POSTS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
+
+            for(Block block : Constants.LECTERNS) {
+                registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+            }
         }
 
         @SubscribeEvent
@@ -128,12 +135,20 @@ public class Main {
                     TileEntityType.Builder.create(() -> new WoodenChestTileEntity(woodenChestBlock.getTileEntityType(), woodenChestBlock.getWoodType()), block).build(null).setRegistryName(woodenChestBlock.getWoodType().getName() + "_chest")
                 );
             }
+
+            for(Block block : Constants.LECTERNS) {
+                WoodenLecternBlock woodenLecternBlock = (WoodenLecternBlock)block;
+                registry.register(
+                        TileEntityType.Builder.create(() -> new WoodenLecternTileEntity(woodenLecternBlock.getTileEntityType(), woodenLecternBlock.getWoodType()), block).build(null).setRegistryName(woodenLecternBlock.getWoodType().getName() + "_lectern")
+                );
+            }
         }
 
         @SubscribeEvent
         public static void onRegisterContainerType(final RegistryEvent.Register<ContainerType<?>> event) {
-            event.getRegistry().register(
-                    new ContainerType<>(WoodenWorkbenchContainer::new).setRegistryName("wooden_workbench_container")
+            event.getRegistry().registerAll(
+                    new ContainerType<>(WoodenWorkbenchContainer::new).setRegistryName("wooden_workbench_container"),
+                    new ContainerType<>((p_221504_0_, p_221504_1_) -> new WoodenLecternContainer(p_221504_0_)).setRegistryName("wooden_lectern_container")
             );
         }
     }

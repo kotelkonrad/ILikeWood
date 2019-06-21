@@ -1,6 +1,5 @@
 package yamahari.ilikewood.objectholders;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 import yamahari.ilikewood.util.Constants;
@@ -62,4 +61,11 @@ public class ModItems {
     public static final Item stripped_birch_post = null;
     public static final Item stripped_jungle_post = null;
     public static final Item stripped_acacia_post = null;
+
+    public static final Item oak_lectern = null;
+    public static final Item dark_oak_lectern = null;
+    public static final Item spruce_lectern = null;
+    public static final Item birch_lectern = null;
+    public static final Item jungle_lectern = null;
+    public static final Item acacia_lectern = null;
 }

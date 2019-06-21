@@ -3,7 +3,6 @@ package yamahari.ilikewood.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import yamahari.ilikewood.objectholders.ModBlocks;
 
 import java.util.Map;
@@ -88,6 +87,16 @@ public class Constants {
                     ModBlocks.birch_bookshelf,
                     ModBlocks.jungle_bookshelf,
                     ModBlocks.acacia_bookshelf
+            );
+
+    public static final ImmutableSet<Block> LECTERNS =
+            ImmutableSet.of(
+                    ModBlocks.oak_lectern,
+                    ModBlocks.dark_oak_lectern,
+                    ModBlocks.spruce_lectern,
+                    ModBlocks.birch_lectern,
+                    ModBlocks.jungle_lectern,
+                    ModBlocks.acacia_lectern
             );
 
     public static final Map<Block, Block> POST_STRIPPING_MAP =

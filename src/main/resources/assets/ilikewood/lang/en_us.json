@@ -69,10 +69,24 @@
   "block.ilikewood.jungle_post": "Jungle Post",
   "block.ilikewood.acacia_post": "Acacia Post",
 	
-	"block.ilikewood.stripped_oak_post": "Stripped Oak Post",
+  "block.ilikewood.stripped_oak_post": "Stripped Oak Post",
   "block.ilikewood.stripped_dark_oak_post": "Stripped Dark Oak Post",
   "block.ilikewood.stripped_spruce_post": "Stripped Spruce Post",
   "block.ilikewood.stripped_birch_post": "Stripped Birch Post",
   "block.ilikewood.stripped_jungle_post": "Stripped Jungle Post",
-  "block.ilikewood.stripped_acacia_post": "Stripped Acacia Post"
+  "block.ilikewood.stripped_acacia_post": "Stripped Acacia Post",
+
+  "block.ilikewood.oak_lectern": "Oak Lectern",
+  "block.ilikewood.dark_oak_lectern": "Dark Oak Lectern",
+  "block.ilikewood.spruce_lectern": "Spruce Lectern",
+  "block.ilikewood.birch_lectern": "Birch Lectern",
+  "block.ilikewood.jungle_lectern": "Jungle Lectern",
+  "block.ilikewood.acacia_lectern": "Acacia Lectern",
+
+  "container.ilikewood.oak_lectern": "Oak Lectern",
+  "container.ilikewood.dark_oak_lectern": "Dark Oak Lectern",
+  "container.ilikewood.spruce_lectern": "Spruce Lectern",
+  "container.ilikewood.birch_lectern": "Birch Lectern",
+  "container.ilikewood.jungle_lectern": "Jungle Lectern",
+  "container.ilikewood.acacia_lectern": "Acacia Lectern"
 }
