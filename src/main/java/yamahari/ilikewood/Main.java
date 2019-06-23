@@ -6,9 +6,7 @@ import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -75,6 +73,14 @@ public class Main {
                         new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern")
                 );
             }
+
+            for(DyeColor dyeColor : DyeColor.values()) {
+                for(WoodType woodType : WoodType.values()) {
+                    registry.register(
+                            new WoodenBedBlock(woodType, dyeColor).setRegistryName(dyeColor.getName() + "_" + woodType.getName() + "_bed")
+                    );
+                }
+            }
         }
 
         @SubscribeEvent
@@ -115,6 +121,10 @@ public class Main {
 
             for(Block block : Constants.LECTERNS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.BEDS) {
+                registry.register(new BedItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
         }
 

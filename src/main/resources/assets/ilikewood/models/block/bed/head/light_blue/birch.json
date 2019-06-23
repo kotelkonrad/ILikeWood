@@ -1,0 +1,8 @@
+{
+  "parent": "ilikewood:block/bed/head/template",
+  "textures": {
+    "sheet": "entity/bed/light_blue",
+    "planks": "block/birch_planks",
+    "frame": "ilikewood:block/bed/frame/birch"
+  }
+}

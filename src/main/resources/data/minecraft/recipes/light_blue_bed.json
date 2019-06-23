@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "ilikewood:light_blue_beds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:light_blue_bed"
+  }
+}

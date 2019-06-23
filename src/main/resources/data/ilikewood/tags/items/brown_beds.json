@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:brown_oak_bed",
+    "ilikewood:brown_dark_oak_bed",
+    "ilikewood:brown_spruce_bed",
+    "ilikewood:brown_birch_bed",
+    "ilikewood:brown_jungle_bed",
+    "ilikewood:brown_acacia_bed"
+  ]
+}
