@@ -1,10 +1,10 @@
 {
-  "block.ilikewood.acacia_wall": "Ściana akacjowa",
-  "block.ilikewood.oak_wall": "Ściana dębowa",
-  "block.ilikewood.dark_oak_wall": "Ściana ciemnodębowa",
-  "block.ilikewood.spruce_wall": "Ściana świerkowa",
-  "block.ilikewood.birch_wall": "Ściana brzozowa",
-  "block.ilikewood.jungle_wall": "Ściana tropikalna",
+  "block.ilikewood.acacia_wall": "Akacjowy murek",
+  "block.ilikewood.oak_wall": "Dębowy murek",
+  "block.ilikewood.dark_oak_wall": "Ciemnodębowy murek",
+  "block.ilikewood.spruce_wall": "Świerkowy murek",
+  "block.ilikewood.birch_wall": "Brzozowy murek",
+  "block.ilikewood.jungle_wall": "Tropikalny murek",
 
   "block.ilikewood.oak_barrel": "Beczka dębowa",
   "block.ilikewood.dark_oak_barrel": "Beczka ciemnodębowa",
