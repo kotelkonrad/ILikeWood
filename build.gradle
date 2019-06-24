@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = 'beta-1.14.2-19w26a'
+version = 'beta-1.14.2-19w26b'
 group = 'yamahari.ilikewood' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ilikewood'
 

@@ -82,7 +82,11 @@ public class WoodenScaffoldingBlock extends Block implements IWooden, IWaterLogg
 
     @Override
     public boolean isReplaceable(BlockState blockStateIn, BlockItemUseContext blockItemUseContextIn) {
-        return blockItemUseContextIn.getItem().getItem() == this.asItem();
+        //return blockItemUseContextIn.getItem().getItem() == this.asItem();
+        for(Block block : Constants.SCAFFOLDINGS) {
+            if(blockItemUseContextIn.getItem().getItem() == Item.getItemFromBlock(block)) return true;
+        }
+        return false;
     }
 
     @Override
