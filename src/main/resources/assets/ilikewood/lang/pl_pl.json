@@ -186,4 +186,12 @@
   "block.ilikewood.lime_jungle_bed": "Jasnozielone łóżko tropikalne",
   "block.ilikewood.blue_dark_oak_bed": "Niebieskie łóżko ciemnodębowe",
   "block.ilikewood.white_spruce_bed": "Białe łóżko świerkowe"
+  
+  "block.ilikewood.oak_scaffolding": "Dębowe rusztowanie",
+  "block.ilikewood.dark_oak_scaffolding": "Ciemnodębowe rusztowanie",
+  "block.ilikewood.spruce_scaffolding": "Świerkowe rusztowanie",
+  "block.ilikewood.birch_scaffolding": "Brzozowe rusztowanie",
+  "block.ilikewood.jungle_scaffolding": "Tropikalne rusztowanie",
+  "block.ilikewood.acacia_scaffolding": "Akacjowe rusztowanie"
+}
 }
