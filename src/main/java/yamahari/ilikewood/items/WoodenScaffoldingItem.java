@@ -43,11 +43,11 @@ public class WoodenScaffoldingItem extends BlockItem {
 
             while(distance < 7) {
                 if (!world.isRemote && !World.isValid(mutableBlockPos)) {
-                    PlayerEntity lvt_9_1_ = blockItemUseContextIn.getPlayer();
-                    int lvt_10_1_ = world.getHeight();
-                    if (lvt_9_1_ instanceof ServerPlayerEntity && mutableBlockPos.getY() >= lvt_10_1_) {
-                        SChatPacket lvt_11_1_ = new SChatPacket((new TranslationTextComponent("build.tooHigh", lvt_10_1_)).applyTextStyle(TextFormatting.RED), ChatType.GAME_INFO);
-                        ((ServerPlayerEntity)lvt_9_1_).connection.sendPacket(lvt_11_1_);
+                    PlayerEntity playerEntity = blockItemUseContextIn.getPlayer();
+                    int height = world.getHeight();
+                    if (playerEntity instanceof ServerPlayerEntity && mutableBlockPos.getY() >= height) {
+                        SChatPacket sChatPacket = new SChatPacket((new TranslationTextComponent("build.tooHigh", height)).applyTextStyle(TextFormatting.RED), ChatType.GAME_INFO);
+                        ((ServerPlayerEntity)playerEntity).connection.sendPacket(sChatPacket);
                     }
                     break;
                 }
