@@ -165,4 +165,11 @@ public class ModItems {
     public static final Item yellow_birch_bed = null;
     public static final Item yellow_jungle_bed = null;
     public static final Item yellow_acacia_bed = null;
+
+    public static final Item oak_scaffolding = null;
+    public static final Item dark_oak_scaffolding = null;
+    public static final Item spruce_scaffolding = null;
+    public static final Item birch_scaffolding = null;
+    public static final Item jungle_scaffolding = null;
+    public static final Item acacia_scaffolding = null;
 }

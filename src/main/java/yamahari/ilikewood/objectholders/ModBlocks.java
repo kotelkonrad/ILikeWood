@@ -166,4 +166,11 @@ public class ModBlocks {
     public static final Block yellow_birch_bed = null;
     public static final Block yellow_jungle_bed = null;
     public static final Block yellow_acacia_bed = null;
+
+    public static final Block oak_scaffolding = null;
+    public static final Block dark_oak_scaffolding = null;
+    public static final Block spruce_scaffolding = null;
+    public static final Block birch_scaffolding = null;
+    public static final Block jungle_scaffolding = null;
+    public static final Block acacia_scaffolding = null;
 }

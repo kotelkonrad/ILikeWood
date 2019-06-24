@@ -185,5 +185,12 @@
   "block.ilikewood.gray_dark_oak_bed": "Gray Dark Oak Bed",
   "block.ilikewood.lime_jungle_bed": "Lime Jungle Bed",
   "block.ilikewood.blue_dark_oak_bed": "Blue Dark Oak Bed",
-  "block.ilikewood.white_spruce_bed": "White Spruce Bed"
+  "block.ilikewood.white_spruce_bed": "White Spruce Bed",
+
+  "block.ilikewood.oak_scaffolding": "Oak Scaffolding",
+  "block.ilikewood.dark_oak_scaffolding": "Dark Oak Scaffolding",
+  "block.ilikewood.spruce_scaffolding": "Spruce Scaffolding",
+  "block.ilikewood.birch_scaffolding": "Birch Scaffolding",
+  "block.ilikewood.jungle_scaffolding": "Jungle Scaffolding",
+  "block.ilikewood.acacia_scaffolding": "Acacia Scaffolding"
 }

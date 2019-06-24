@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
 import yamahari.ilikewood.container.WoodenLecternContainer;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
+import yamahari.ilikewood.items.WoodenScaffoldingItem;
 import yamahari.ilikewood.proxy.ClientProxy;
 import yamahari.ilikewood.proxy.CommonProxy;
 import yamahari.ilikewood.proxy.Proxy;
@@ -70,7 +71,8 @@ public class Main {
                         new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels"),
                         WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post"),
                         WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post"),
-                        new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern")
+                        new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern"),
+                        new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding")
                 );
             }
 
@@ -125,6 +127,10 @@ public class Main {
 
             for(Block block : Constants.BEDS) {
                 registry.register(new BedItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.SCAFFOLDINGS) {
+                registry.register(new WoodenScaffoldingItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
         }
 

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "bottom=true": { "model": "ilikewood:block/scaffolding/unstable/spruce" },
+        "bottom=false": { "model": "ilikewood:block/scaffolding/stable/spruce" }
+    }
+}

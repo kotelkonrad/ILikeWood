@@ -3,6 +3,7 @@ package yamahari.ilikewood.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.Mod;
 import yamahari.ilikewood.objectholders.ModBlocks;
 
 import java.util.Map;
@@ -197,6 +198,16 @@ public class Constants {
                     ModBlocks.yellow_birch_bed,
                     ModBlocks.yellow_jungle_bed,
                     ModBlocks.yellow_acacia_bed
+            );
+
+    public static final ImmutableSet<Block> SCAFFOLDINGS =
+            ImmutableSet.of(
+                    ModBlocks.oak_scaffolding,
+                    ModBlocks.dark_oak_scaffolding,
+                    ModBlocks.spruce_scaffolding,
+                    ModBlocks.birch_scaffolding,
+                    ModBlocks.jungle_scaffolding,
+                    ModBlocks.acacia_scaffolding
             );
 
     public static final Map<Block, Block> POST_STRIPPING_MAP =
