@@ -35,7 +35,7 @@ public class WoodenChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
     private final ChestModel largeChest = new LargeChestModel();
 
     @Override
-    public void render(T tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
+    public void func_199341_a(T tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
         GlStateManager.enableDepthTest();
         GlStateManager.depthFunc(515);
         GlStateManager.depthMask(true);

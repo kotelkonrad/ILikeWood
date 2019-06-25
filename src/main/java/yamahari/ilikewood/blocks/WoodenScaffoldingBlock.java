@@ -14,6 +14,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -171,7 +172,7 @@ public class WoodenScaffoldingBlock extends Block implements IWooden, IWaterLogg
 
         while (it.hasNext()) {
             Direction direction = (Direction) it.next();
-            BlockState blockState1 = blockReaderIn.getBlockState(mutableBlockPos.setPos(blockPosIn).move(direction));
+            BlockState blockState1 = blockReaderIn.getBlockState(mutableBlockPos.func_189533_g(blockPosIn).move(direction));
             if (blockState1.getBlock() instanceof WoodenScaffoldingBlock) {
                 distance = Math.min(distance, blockState1.get(DISTANCE) + 1);
                 if (distance == 1) {
