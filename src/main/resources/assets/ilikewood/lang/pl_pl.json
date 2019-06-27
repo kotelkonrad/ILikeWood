@@ -193,4 +193,18 @@
   "block.ilikewood.birch_scaffolding": "Brzozowe rusztowanie",
   "block.ilikewood.jungle_scaffolding": "Tropikalne rusztowanie",
   "block.ilikewood.acacia_scaffolding": "Akacjowe rusztowanie"
-}
+
+  "item.ilikewood.oak_stick": "Dębowy patyk",
+  "item.ilikewood.dark_oak_stick": "Ciemnodębowy patyk",
+  "item.ilikewood.spruce_stick": "Świerkowy patyk",
+  "item.ilikewood.birch_stick": "Brzozowy patyk",
+  "item.ilikewood.jungle_stick": "Tropikalny patyk",
+  "item.ilikewood.acacia_stick": "Akacjowy patyk",
+
+  "block.ilikewood.oak_ladder": "Drabina dębowa",
+  "block.ilikewood.dark_oak_ladder": "Drabina ciemnodębowa",
+  "block.ilikewood.spruce_ladder": "Drabina świerkowa",
+  "block.ilikewood.birch_ladder": "Drabina brzozowa",
+  "block.ilikewood.jungle_ladder": "Drabina tropikalna",
+  "block.ilikewood.acacia_ladder": "Drabina akacjowa"
+}}
