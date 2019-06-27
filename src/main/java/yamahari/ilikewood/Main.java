@@ -72,7 +72,8 @@ public class Main {
                         WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post"),
                         WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post"),
                         new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern"),
-                        new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding")
+                        new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding"),
+                        new WoodenLadderBlock(woodType).setRegistryName(woodType.getName() + "_ladder")
                 );
             }
 
@@ -131,6 +132,14 @@ public class Main {
 
             for(Block block : Constants.SCAFFOLDINGS) {
                 registry.register(new WoodenScaffoldingItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.LADDERS) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(WoodType woodType : WoodType.values()) {
+                registry.register(new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(woodType.getName() + "_stick"));
             }
         }
 

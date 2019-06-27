@@ -172,4 +172,18 @@ public class ModItems {
     public static final Item birch_scaffolding = null;
     public static final Item jungle_scaffolding = null;
     public static final Item acacia_scaffolding = null;
+
+    public static final Item oak_stick = null;
+    public static final Item dark_oak_stick = null;
+    public static final Item spruce_stick = null;
+    public static final Item birch_stick = null;
+    public static final Item jungle_stick = null;
+    public static final Item acacia_stick = null;
+
+    public static final Item oak_ladder = null;
+    public static final Item dark_oak_ladder = null;
+    public static final Item spruce_ladder = null;
+    public static final Item birch_ladder = null;
+    public static final Item jungle_ladder = null;
+    public static final Item acacia_ladder = null;
 }

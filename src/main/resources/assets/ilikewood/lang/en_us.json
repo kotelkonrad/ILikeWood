@@ -192,5 +192,19 @@
   "block.ilikewood.spruce_scaffolding": "Spruce Scaffolding",
   "block.ilikewood.birch_scaffolding": "Birch Scaffolding",
   "block.ilikewood.jungle_scaffolding": "Jungle Scaffolding",
-  "block.ilikewood.acacia_scaffolding": "Acacia Scaffolding"
+  "block.ilikewood.acacia_scaffolding": "Acacia Scaffolding",
+
+  "item.ilikewood.oak_stick": "Oak Stick",
+  "item.ilikewood.dark_oak_stick": "Dark Oak Stick",
+  "item.ilikewood.spruce_stick": "Spruce Stick",
+  "item.ilikewood.birch_stick": "Birch Stick",
+  "item.ilikewood.jungle_stick": "Jungle Stick",
+  "item.ilikewood.acacia_stick": "Acacia Stick",
+
+  "block.ilikewood.oak_ladder": "Oak Ladder",
+  "block.ilikewood.dark_oak_ladder": "Dark Oak Ladder",
+  "block.ilikewood.spruce_ladder": "Spruce Ladder",
+  "block.ilikewood.birch_ladder": "Birch Ladder",
+  "block.ilikewood.jungle_ladder": "Jungle Ladder",
+  "block.ilikewood.acacia_ladder": "Acacia Ladder"
 }

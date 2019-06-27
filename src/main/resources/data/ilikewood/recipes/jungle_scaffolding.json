@@ -10,7 +10,7 @@
       "item": "minecraft:string"
     },
     "I": {
-      "item": "minecraft:jungle_fence"
+      "item": "ilikewood:jungle_stick"
     }
   },
   "result": {

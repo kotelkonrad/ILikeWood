@@ -10,7 +10,7 @@
       "item": "minecraft:string"
     },
     "I": {
-      "item": "minecraft:birch_fence"
+      "item": "ilikewood:birch_stick"
     }
   },
   "result": {

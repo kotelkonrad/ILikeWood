@@ -173,4 +173,11 @@ public class ModBlocks {
     public static final Block birch_scaffolding = null;
     public static final Block jungle_scaffolding = null;
     public static final Block acacia_scaffolding = null;
+
+    public static final Block oak_ladder = null;
+    public static final Block dark_oak_ladder = null;
+    public static final Block spruce_ladder = null;
+    public static final Block birch_ladder = null;
+    public static final Block jungle_ladder = null;
+    public static final Block acacia_ladder = null;
 }

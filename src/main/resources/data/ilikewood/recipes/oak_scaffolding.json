@@ -10,7 +10,7 @@
       "item": "minecraft:string"
     },
     "I": {
-      "item": "minecraft:oak_fence"
+      "item": "ilikewood:oak_stick"
     }
   },
   "result": {
