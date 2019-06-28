@@ -3,6 +3,7 @@ package yamahari.ilikewood.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemTier;
 import yamahari.ilikewood.objectholders.ModBlocks;
 
 import java.util.Map;
@@ -228,5 +229,11 @@ public class Constants {
                     .put(ModBlocks.jungle_post, ModBlocks.stripped_jungle_post)
                     .put(ModBlocks.acacia_post, ModBlocks.stripped_acacia_post).build();
 
-
+    public static final Map<String, ItemTier> ITEM_TIER_MAP =
+            (new ImmutableMap.Builder<String, ItemTier>())
+                    .put("wooden", ItemTier.WOOD)
+                    .put("stone", ItemTier.STONE)
+                    .put("iron", ItemTier.IRON)
+                    .put("diamond", ItemTier.DIAMOND)
+                    .put("golden", ItemTier.GOLD).build();
 }

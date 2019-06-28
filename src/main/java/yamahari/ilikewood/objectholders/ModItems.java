@@ -186,4 +186,365 @@ public class ModItems {
     public static final Item birch_ladder = null;
     public static final Item jungle_ladder = null;
     public static final Item acacia_ladder = null;
+
+    public static final Item stone_oak_axe = null;
+    public static final Item iron_oak_axe = null;
+    public static final Item diamond_oak_axe = null;
+    public static final Item golden_oak_axe = null;
+
+    public static final Item stone_dark_oak_axe = null;
+    public static final Item iron_dark_oak_axe = null;
+    public static final Item diamond_dark_oak_axe = null;
+    public static final Item golden_dark_oak_axe = null;
+
+
+    public static final Item stone_spruce_axe = null;
+    public static final Item iron_spruce_axe = null;
+    public static final Item diamond_spruce_axe = null;
+    public static final Item golden_spruce_axe = null;
+
+    public static final Item stone_birch_axe = null;
+    public static final Item iron_birch_axe = null;
+    public static final Item diamond_birch_axe = null;
+    public static final Item golden_birch_axe = null;
+
+    public static final Item stone_jungle_axe = null;
+    public static final Item iron_jungle_axe = null;
+    public static final Item diamond_jungle_axe = null;
+    public static final Item golden_jungle_axe = null;
+
+    public static final Item stone_acacia_axe = null;
+    public static final Item iron_acacia_axe = null;
+    public static final Item diamond_acacia_axe = null;
+    public static final Item golden_acacia_axe = null;
+
+    public static final Item oak_wooden_oak_axe = null;
+    public static final Item dark_oak_wooden_oak_axe = null;
+    public static final Item spruce_wooden_oak_axe = null;
+    public static final Item birch_wooden_oak_axe = null;
+    public static final Item jungle_wooden_oak_axe = null;
+    public static final Item acacia_wooden_oak_axe = null;
+
+    public static final Item oak_wooden_spruce_axe = null;
+    public static final Item dark_oak_wooden_spruce_axe = null;
+    public static final Item spruce_wooden_spruce_axe = null;
+    public static final Item birch_wooden_spruce_axe = null;
+    public static final Item jungle_wooden_spruce_axe = null;
+    public static final Item acacia_wooden_spruce_axe = null;
+
+    public static final Item oak_wooden_birch_axe = null;
+    public static final Item dark_oak_wooden_birch_axe = null;
+    public static final Item spruce_wooden_birch_axe = null;
+    public static final Item birch_wooden_birch_axe = null;
+    public static final Item jungle_wooden_birch_axe = null;
+    public static final Item acacia_wooden_birch_axe = null;
+
+    public static final Item oak_wooden_dark_oak_axe = null;
+    public static final Item dark_oak_wooden_dark_oak_axe = null;
+    public static final Item spruce_wooden_dark_oak_axe = null;
+    public static final Item birch_wooden_dark_oak_axe = null;
+    public static final Item jungle_wooden_dark_oak_axe = null;
+    public static final Item acacia_wooden_dark_oak_axe = null;
+
+    public static final Item oak_wooden_jungle_axe = null;
+    public static final Item dark_oak_wooden_jungle_axe = null;
+    public static final Item spruce_wooden_jungle_axe = null;
+    public static final Item birch_wooden_jungle_axe = null;
+    public static final Item jungle_wooden_jungle_axe = null;
+    public static final Item acacia_wooden_jungle_axe = null;
+
+    public static final Item oak_wooden_acacia_axe = null;
+    public static final Item dark_oak_wooden_acacia_axe = null;
+    public static final Item spruce_wooden_acacia_axe = null;
+    public static final Item birch_wooden_acacia_axe = null;
+    public static final Item jungle_wooden_acacia_axe = null;
+    public static final Item acacia_wooden_acacia_axe = null;
+
+    public static final Item stone_oak_pickaxe = null;
+    public static final Item iron_oak_pickaxe = null;
+    public static final Item diamond_oak_pickaxe = null;
+    public static final Item golden_oak_pickaxe = null;
+
+    public static final Item stone_dark_oak_pickaxe = null;
+    public static final Item iron_dark_oak_pickaxe = null;
+    public static final Item diamond_dark_oak_pickaxe = null;
+    public static final Item golden_dark_oak_pickaxe = null;
+
+    public static final Item stone_spruce_pickaxe = null;
+    public static final Item iron_spruce_pickaxe = null;
+    public static final Item diamond_spruce_pickaxe = null;
+    public static final Item golden_spruce_pickaxe = null;
+
+    public static final Item stone_birch_pickaxe = null;
+    public static final Item iron_birch_pickaxe = null;
+    public static final Item diamond_birch_pickaxe = null;
+    public static final Item golden_birch_pickaxe = null;
+
+    public static final Item stone_jungle_pickaxe = null;
+    public static final Item iron_jungle_pickaxe = null;
+    public static final Item diamond_jungle_pickaxe = null;
+    public static final Item golden_jungle_pickaxe = null;
+
+    public static final Item stone_acacia_pickaxe = null;
+    public static final Item iron_acacia_pickaxe = null;
+    public static final Item diamond_acacia_pickaxe = null;
+    public static final Item golden_acacia_pickaxe = null;
+
+    public static final Item oak_wooden_oak_pickaxe = null;
+    public static final Item dark_oak_wooden_oak_pickaxe = null;
+    public static final Item spruce_wooden_oak_pickaxe = null;
+    public static final Item birch_wooden_oak_pickaxe = null;
+    public static final Item jungle_wooden_oak_pickaxe = null;
+    public static final Item acacia_wooden_oak_pickaxe = null;
+
+    public static final Item oak_wooden_spruce_pickaxe = null;
+    public static final Item dark_oak_wooden_spruce_pickaxe = null;
+    public static final Item spruce_wooden_spruce_pickaxe = null;
+    public static final Item birch_wooden_spruce_pickaxe = null;
+    public static final Item jungle_wooden_spruce_pickaxe = null;
+    public static final Item acacia_wooden_spruce_pickaxe = null;
+
+    public static final Item oak_wooden_birch_pickaxe = null;
+    public static final Item dark_oak_wooden_birch_pickaxe = null;
+    public static final Item spruce_wooden_birch_pickaxe = null;
+    public static final Item birch_wooden_birch_pickaxe = null;
+    public static final Item jungle_wooden_birch_pickaxe = null;
+    public static final Item acacia_wooden_birch_pickaxe = null;
+
+    public static final Item oak_wooden_dark_oak_pickaxe = null;
+    public static final Item dark_oak_wooden_dark_oak_pickaxe = null;
+    public static final Item spruce_wooden_dark_oak_pickaxe = null;
+    public static final Item birch_wooden_dark_oak_pickaxe = null;
+    public static final Item jungle_wooden_dark_oak_pickaxe = null;
+    public static final Item acacia_wooden_dark_oak_pickaxe = null;
+
+    public static final Item oak_wooden_jungle_pickaxe = null;
+    public static final Item dark_oak_wooden_jungle_pickaxe = null;
+    public static final Item spruce_wooden_jungle_pickaxe = null;
+    public static final Item birch_wooden_jungle_pickaxe = null;
+    public static final Item jungle_wooden_jungle_pickaxe = null;
+    public static final Item acacia_wooden_jungle_pickaxe = null;
+
+    public static final Item oak_wooden_acacia_pickaxe = null;
+    public static final Item dark_oak_wooden_acacia_pickaxe = null;
+    public static final Item spruce_wooden_acacia_pickaxe = null;
+    public static final Item birch_wooden_acacia_pickaxe = null;
+    public static final Item jungle_wooden_acacia_pickaxe = null;
+    public static final Item acacia_wooden_acacia_pickaxe = null;
+    
+    public static final Item stone_oak_shovel = null;
+    public static final Item iron_oak_shovel = null;
+    public static final Item diamond_oak_shovel = null;
+    public static final Item golden_oak_shovel = null;
+
+    public static final Item stone_dark_oak_shovel = null;
+    public static final Item iron_dark_oak_shovel = null;
+    public static final Item diamond_dark_oak_shovel = null;
+    public static final Item golden_dark_oak_shovel = null;
+
+    public static final Item stone_spruce_shovel = null;
+    public static final Item iron_spruce_shovel = null;
+    public static final Item diamond_spruce_shovel = null;
+    public static final Item golden_spruce_shovel = null;
+
+    public static final Item stone_birch_shovel = null;
+    public static final Item iron_birch_shovel = null;
+    public static final Item diamond_birch_shovel = null;
+    public static final Item golden_birch_shovel = null;
+
+    public static final Item stone_jungle_shovel = null;
+    public static final Item iron_jungle_shovel = null;
+    public static final Item diamond_jungle_shovel = null;
+    public static final Item golden_jungle_shovel = null;
+
+    public static final Item stone_acacia_shovel = null;
+    public static final Item iron_acacia_shovel = null;
+    public static final Item diamond_acacia_shovel = null;
+    public static final Item golden_acacia_shovel = null;
+
+    public static final Item oak_wooden_oak_shovel = null;
+    public static final Item dark_oak_wooden_oak_shovel = null;
+    public static final Item spruce_wooden_oak_shovel = null;
+    public static final Item birch_wooden_oak_shovel = null;
+    public static final Item jungle_wooden_oak_shovel = null;
+    public static final Item acacia_wooden_oak_shovel = null;
+
+    public static final Item oak_wooden_spruce_shovel = null;
+    public static final Item dark_oak_wooden_spruce_shovel = null;
+    public static final Item spruce_wooden_spruce_shovel = null;
+    public static final Item birch_wooden_spruce_shovel = null;
+    public static final Item jungle_wooden_spruce_shovel = null;
+    public static final Item acacia_wooden_spruce_shovel = null;
+
+    public static final Item oak_wooden_birch_shovel = null;
+    public static final Item dark_oak_wooden_birch_shovel = null;
+    public static final Item spruce_wooden_birch_shovel = null;
+    public static final Item birch_wooden_birch_shovel = null;
+    public static final Item jungle_wooden_birch_shovel = null;
+    public static final Item acacia_wooden_birch_shovel = null;
+
+    public static final Item oak_wooden_dark_oak_shovel = null;
+    public static final Item dark_oak_wooden_dark_oak_shovel = null;
+    public static final Item spruce_wooden_dark_oak_shovel = null;
+    public static final Item birch_wooden_dark_oak_shovel = null;
+    public static final Item jungle_wooden_dark_oak_shovel = null;
+    public static final Item acacia_wooden_dark_oak_shovel = null;
+
+    public static final Item oak_wooden_jungle_shovel = null;
+    public static final Item dark_oak_wooden_jungle_shovel = null;
+    public static final Item spruce_wooden_jungle_shovel = null;
+    public static final Item birch_wooden_jungle_shovel = null;
+    public static final Item jungle_wooden_jungle_shovel = null;
+    public static final Item acacia_wooden_jungle_shovel = null;
+
+    public static final Item oak_wooden_acacia_shovel = null;
+    public static final Item dark_oak_wooden_acacia_shovel = null;
+    public static final Item spruce_wooden_acacia_shovel = null;
+    public static final Item birch_wooden_acacia_shovel = null;
+    public static final Item jungle_wooden_acacia_shovel = null;
+    public static final Item acacia_wooden_acacia_shovel = null;
+
+    public static final Item stone_oak_sword = null;
+    public static final Item iron_oak_sword = null;
+    public static final Item diamond_oak_sword = null;
+    public static final Item golden_oak_sword = null;
+
+    public static final Item stone_dark_oak_sword = null;
+    public static final Item iron_dark_oak_sword = null;
+    public static final Item diamond_dark_oak_sword = null;
+    public static final Item golden_dark_oak_sword = null;
+
+    public static final Item stone_spruce_sword = null;
+    public static final Item iron_spruce_sword = null;
+    public static final Item diamond_spruce_sword = null;
+    public static final Item golden_spruce_sword = null;
+
+    public static final Item stone_birch_sword = null;
+    public static final Item iron_birch_sword = null;
+    public static final Item diamond_birch_sword = null;
+    public static final Item golden_birch_sword = null;
+
+    public static final Item stone_jungle_sword = null;
+    public static final Item iron_jungle_sword = null;
+    public static final Item diamond_jungle_sword = null;
+    public static final Item golden_jungle_sword = null;
+
+    public static final Item stone_acacia_sword = null;
+    public static final Item iron_acacia_sword = null;
+    public static final Item diamond_acacia_sword = null;
+    public static final Item golden_acacia_sword = null;
+
+    public static final Item oak_wooden_oak_sword = null;
+    public static final Item dark_oak_wooden_oak_sword = null;
+    public static final Item spruce_wooden_oak_sword = null;
+    public static final Item birch_wooden_oak_sword = null;
+    public static final Item jungle_wooden_oak_sword = null;
+    public static final Item acacia_wooden_oak_sword = null;
+
+    public static final Item oak_wooden_spruce_sword = null;
+    public static final Item dark_oak_wooden_spruce_sword = null;
+    public static final Item spruce_wooden_spruce_sword = null;
+    public static final Item birch_wooden_spruce_sword = null;
+    public static final Item jungle_wooden_spruce_sword = null;
+    public static final Item acacia_wooden_spruce_sword = null;
+
+    public static final Item oak_wooden_birch_sword = null;
+    public static final Item dark_oak_wooden_birch_sword = null;
+    public static final Item spruce_wooden_birch_sword = null;
+    public static final Item birch_wooden_birch_sword = null;
+    public static final Item jungle_wooden_birch_sword = null;
+    public static final Item acacia_wooden_birch_sword = null;
+
+    public static final Item oak_wooden_dark_oak_sword = null;
+    public static final Item dark_oak_wooden_dark_oak_sword = null;
+    public static final Item spruce_wooden_dark_oak_sword = null;
+    public static final Item birch_wooden_dark_oak_sword = null;
+    public static final Item jungle_wooden_dark_oak_sword = null;
+    public static final Item acacia_wooden_dark_oak_sword = null;
+
+    public static final Item oak_wooden_jungle_sword = null;
+    public static final Item dark_oak_wooden_jungle_sword = null;
+    public static final Item spruce_wooden_jungle_sword = null;
+    public static final Item birch_wooden_jungle_sword = null;
+    public static final Item jungle_wooden_jungle_sword = null;
+    public static final Item acacia_wooden_jungle_sword = null;
+
+    public static final Item oak_wooden_acacia_sword = null;
+    public static final Item dark_oak_wooden_acacia_sword = null;
+    public static final Item spruce_wooden_acacia_sword = null;
+    public static final Item birch_wooden_acacia_sword = null;
+    public static final Item jungle_wooden_acacia_sword = null;
+    public static final Item acacia_wooden_acacia_sword = null;
+
+    public static final Item stone_oak_hoe = null;
+    public static final Item iron_oak_hoe = null;
+    public static final Item diamond_oak_hoe = null;
+    public static final Item golden_oak_hoe = null;
+
+    public static final Item stone_dark_oak_hoe = null;
+    public static final Item iron_dark_oak_hoe = null;
+    public static final Item diamond_dark_oak_hoe = null;
+    public static final Item golden_dark_oak_hoe = null;
+
+    public static final Item stone_spruce_hoe = null;
+    public static final Item iron_spruce_hoe = null;
+    public static final Item diamond_spruce_hoe = null;
+    public static final Item golden_spruce_hoe = null;
+
+    public static final Item stone_birch_hoe = null;
+    public static final Item iron_birch_hoe = null;
+    public static final Item diamond_birch_hoe = null;
+    public static final Item golden_birch_hoe = null;
+
+    public static final Item stone_jungle_hoe = null;
+    public static final Item iron_jungle_hoe = null;
+    public static final Item diamond_jungle_hoe = null;
+    public static final Item golden_jungle_hoe = null;
+
+    public static final Item stone_acacia_hoe = null;
+    public static final Item iron_acacia_hoe = null;
+    public static final Item diamond_acacia_hoe = null;
+    public static final Item golden_acacia_hoe = null;
+
+    public static final Item oak_wooden_oak_hoe = null;
+    public static final Item dark_oak_wooden_oak_hoe = null;
+    public static final Item spruce_wooden_oak_hoe = null;
+    public static final Item birch_wooden_oak_hoe = null;
+    public static final Item jungle_wooden_oak_hoe = null;
+    public static final Item acacia_wooden_oak_hoe = null;
+
+    public static final Item oak_wooden_spruce_hoe = null;
+    public static final Item dark_oak_wooden_spruce_hoe = null;
+    public static final Item spruce_wooden_spruce_hoe = null;
+    public static final Item birch_wooden_spruce_hoe = null;
+    public static final Item jungle_wooden_spruce_hoe = null;
+    public static final Item acacia_wooden_spruce_hoe = null;
+
+    public static final Item oak_wooden_birch_hoe = null;
+    public static final Item dark_oak_wooden_birch_hoe = null;
+    public static final Item spruce_wooden_birch_hoe = null;
+    public static final Item birch_wooden_birch_hoe = null;
+    public static final Item jungle_wooden_birch_hoe = null;
+    public static final Item acacia_wooden_birch_hoe = null;
+
+    public static final Item oak_wooden_dark_oak_hoe = null;
+    public static final Item dark_oak_wooden_dark_oak_hoe = null;
+    public static final Item spruce_wooden_dark_oak_hoe = null;
+    public static final Item birch_wooden_dark_oak_hoe = null;
+    public static final Item jungle_wooden_dark_oak_hoe = null;
+    public static final Item acacia_wooden_dark_oak_hoe = null;
+
+    public static final Item oak_wooden_jungle_hoe = null;
+    public static final Item dark_oak_wooden_jungle_hoe = null;
+    public static final Item spruce_wooden_jungle_hoe = null;
+    public static final Item birch_wooden_jungle_hoe = null;
+    public static final Item jungle_wooden_jungle_hoe = null;
+    public static final Item acacia_wooden_jungle_hoe = null;
+
+    public static final Item oak_wooden_acacia_hoe = null;
+    public static final Item dark_oak_wooden_acacia_hoe = null;
+    public static final Item spruce_wooden_acacia_hoe = null;
+    public static final Item birch_wooden_acacia_hoe = null;
+    public static final Item jungle_wooden_acacia_hoe = null;
+    public static final Item acacia_wooden_acacia_hoe = null;
 }

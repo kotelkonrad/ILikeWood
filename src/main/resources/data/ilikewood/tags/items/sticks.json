@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_stick",
+    "ilikewood:dark_oak_stick",
+    "ilikewood:spruce_stick",
+    "ilikewood:birch_stick",
+    "ilikewood:acacia_stick",
+    "ilikewood:jungle_stick"
+  ]
+}

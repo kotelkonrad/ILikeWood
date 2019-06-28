@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
 import yamahari.ilikewood.container.WoodenLecternContainer;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
-import yamahari.ilikewood.items.WoodenScaffoldingItem;
+import yamahari.ilikewood.items.*;
 import yamahari.ilikewood.proxy.ClientProxy;
 import yamahari.ilikewood.proxy.CommonProxy;
 import yamahari.ilikewood.proxy.Proxy;
@@ -140,6 +140,28 @@ public class Main {
 
             for(WoodType woodType : WoodType.values()) {
                 registry.register(new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(woodType.getName() + "_stick"));
+                for(String tier : Constants.ITEM_TIER_MAP.keySet()) {
+                    if(tier.equals("wooden")) {
+                        for(WoodType w : WoodType.values()) {
+                            registry.registerAll(
+                                    WoodenAxeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_axe"),
+                                    new WoodenPickaxeItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_pickaxe"),
+                                    new WoodenShovelItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_shovel"),
+                                    new WoodenSwordItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_sword"),
+                                    WoodenHoeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_hoe")
+                            );
+                        }
+                    }
+                    else {
+                        registry.registerAll(
+                                WoodenAxeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_axe"),
+                                new WoodenPickaxeItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_pickaxe"),
+                                new WoodenShovelItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_shovel"),
+                                new WoodenSwordItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_sword"),
+                                WoodenHoeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_hoe")
+                        );
+                    }
+                }
             }
         }
 
