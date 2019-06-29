@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ilikewood:spruce_post"
+    }
+  },
+  "result": {
+    "item": "ilikewood:spruce_log_pile"
+  }
+}

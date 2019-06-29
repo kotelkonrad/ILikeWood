@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntityType;
@@ -73,7 +74,9 @@ public class Main {
                         WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post"),
                         new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern"),
                         new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding"),
-                        new WoodenLadderBlock(woodType).setRegistryName(woodType.getName() + "_ladder")
+                        new WoodenLadderBlock(woodType).setRegistryName(woodType.getName() + "_ladder"),
+                        new WoodenComposterBlock(woodType).setRegistryName(woodType.getName() + "_composter"),
+                        new WoodenLogPileBlock(woodType).setRegistryName(woodType.getName() + "_log_pile")
                 );
             }
 
@@ -138,6 +141,14 @@ public class Main {
                 registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
 
+            for(Block block : Constants.COMPOSTERS) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.LOG_PILES) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
             for(WoodType woodType : WoodType.values()) {
                 registry.register(new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(woodType.getName() + "_stick"));
                 for(String tier : Constants.ITEM_TIER_MAP.keySet()) {
@@ -197,6 +208,11 @@ public class Main {
                     new ContainerType<>(WoodenWorkbenchContainer::new).setRegistryName("wooden_workbench_container"),
                     new ContainerType<>((p_221504_0_, p_221504_1_) -> new WoodenLecternContainer(p_221504_0_)).setRegistryName("wooden_lectern_container")
             );
+        }
+
+        @SubscribeEvent
+        public static void onRegisterVillagerProfession(final RegistryEvent.Register<VillagerProfession> event) {
+
         }
     }
 }

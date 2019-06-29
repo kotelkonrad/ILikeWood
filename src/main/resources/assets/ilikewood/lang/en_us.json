@@ -208,6 +208,20 @@
   "block.ilikewood.jungle_ladder": "Jungle Ladder",
   "block.ilikewood.acacia_ladder": "Acacia Ladder",
 
+  "block.ilikewood.oak_composter": "Oak Composter",
+  "block.ilikewood.dark_oak_composter": "Dark Oak Composter",
+  "block.ilikewood.spruce_composter": "Spruce Composter",
+  "block.ilikewood.birch_composter": "Birch Composter",
+  "block.ilikewood.jungle_composter": "Jungle Composter",
+  "block.ilikewood.acacia_composter": "Acacia Composter",
+
+  "block.ilikewood.oak_log_pile": "Oak Log Pile",
+  "block.ilikewood.dark_oak_log_pile": "Dark Oak Log Pile",
+  "block.ilikewood.spruce_log_pile": "Spruce Log Pile",
+  "block.ilikewood.birch_log_pile": "Birch Log Pile",
+  "block.ilikewood.jungle_log_pile": "Jungle Log Pile",
+  "block.ilikewood.acacia_log_pile": "Acacia Log Pile",
+
   "item.ilikewood.stone_acacia_hoe": "Stone Acacia Hoe",
   "item.ilikewood.iron_dark_oak_pickaxe": "Iron Dark Oak Pickaxe",
   "item.ilikewood.acacia_wooden_acacia_shovel": "Acacia Wooden Acacia Shovel",

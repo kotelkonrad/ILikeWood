@@ -187,6 +187,13 @@ public class ModItems {
     public static final Item jungle_ladder = null;
     public static final Item acacia_ladder = null;
 
+    public static final Item oak_composter = null;
+    public static final Item dark_oak_composter = null;
+    public static final Item spruce_composter = null;
+    public static final Item birch_composter = null;
+    public static final Item jungle_composter = null;
+    public static final Item acacia_composter = null;
+
     public static final Item stone_oak_axe = null;
     public static final Item iron_oak_axe = null;
     public static final Item diamond_oak_axe = null;
@@ -547,4 +554,11 @@ public class ModItems {
     public static final Item birch_wooden_acacia_hoe = null;
     public static final Item jungle_wooden_acacia_hoe = null;
     public static final Item acacia_wooden_acacia_hoe = null;
+
+    public static final Item oak_log_pile = null;
+    public static final Item dark_oak_log_pile = null;
+    public static final Item spruce_log_pile = null;
+    public static final Item birch_log_pile = null;
+    public static final Item jungle_log_pile = null;
+    public static final Item acacia_log_pile = null;
 }

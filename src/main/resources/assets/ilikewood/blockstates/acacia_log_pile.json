@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "ilikewood:block/log_pile/acacia", "y": 180 },
+        "facing=south": { "model": "ilikewood:block/log_pile/acacia" },
+        "facing=east": { "model": "ilikewood:block/log_pile/acacia", "y": 270 },
+        "facing=west": { "model": "ilikewood:block/log_pile/acacia", "y": 90 }
+    }
+}

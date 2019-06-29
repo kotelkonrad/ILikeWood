@@ -220,6 +220,26 @@ public class Constants {
                     ModBlocks.acacia_ladder
             );
 
+    public static final ImmutableSet<Block> COMPOSTERS =
+            ImmutableSet.of(
+                    ModBlocks.oak_composter,
+                    ModBlocks.dark_oak_composter,
+                    ModBlocks.spruce_composter,
+                    ModBlocks.birch_composter,
+                    ModBlocks.jungle_composter,
+                    ModBlocks.acacia_composter
+            );
+
+    public static final ImmutableSet<Block> LOG_PILES =
+            ImmutableSet.of(
+                    ModBlocks.oak_log_pile,
+                    ModBlocks.dark_oak_log_pile,
+                    ModBlocks.spruce_log_pile,
+                    ModBlocks.birch_log_pile,
+                    ModBlocks.jungle_log_pile,
+                    ModBlocks.acacia_log_pile
+            );
+
     public static final Map<Block, Block> POST_STRIPPING_MAP =
             (new ImmutableMap.Builder<Block, Block>())
                     .put(ModBlocks.oak_post, ModBlocks.stripped_oak_post)

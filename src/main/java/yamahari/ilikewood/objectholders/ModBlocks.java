@@ -1,7 +1,6 @@
 package yamahari.ilikewood.objectholders;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 import yamahari.ilikewood.util.Constants;
 
@@ -180,4 +179,19 @@ public class ModBlocks {
     public static final Block birch_ladder = null;
     public static final Block jungle_ladder = null;
     public static final Block acacia_ladder = null;
+
+    public static final Block oak_composter = null;
+    public static final Block dark_oak_composter = null;
+    public static final Block spruce_composter = null;
+    public static final Block birch_composter = null;
+    public static final Block jungle_composter = null;
+    public static final Block acacia_composter = null;
+
+    public static final Block oak_log_pile = null;
+    public static final Block dark_oak_log_pile = null;
+    public static final Block spruce_log_pile = null;
+    public static final Block birch_log_pile = null;
+    public static final Block jungle_log_pile = null;
+    public static final Block acacia_log_pile = null;
+    
 }
