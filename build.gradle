@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = 'release-1.14.3-19w26d'
+version = 'release-1.14.3-19w28a'
 group = 'yamahari.ilikewood' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ilikewood'
 
@@ -84,7 +84,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.14.3-27.0.15'
+    minecraft 'net.minecraftforge:forge:1.14.3-27.0.25'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -116,7 +116,7 @@ jar {
         attributes([
             "Specification-Title": "ilikewood",
             "Specification-Vendor": "yamahari",
-            "Specification-Version": "release-1.14.3-19w26c", // We are version 1 of ourselves
+            "Specification-Version": "release-1.14.3-19w28a", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"yamahari",
