@@ -6,10 +6,13 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemTier;
 import yamahari.ilikewood.objectholders.ModBlocks;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Constants {
     public static final String MOD_ID = "ilikewood";
+    public static final ImmutableMap<Block, Block> TORCHES;
+    
     public static final ImmutableSet<Block> BARRELS =
             ImmutableSet.of(
                     ModBlocks.oak_barrel,
@@ -256,4 +259,15 @@ public class Constants {
                     .put("iron", ItemTier.IRON)
                     .put("diamond", ItemTier.DIAMOND)
                     .put("golden", ItemTier.GOLD).build();
+
+    static {
+        Map<Block, Block> torches = new HashMap();
+        torches.put(ModBlocks.oak_torch, ModBlocks.oak_wall_torch);
+        torches.put(ModBlocks.dark_oak_torch, ModBlocks.dark_oak_wall_torch);
+        torches.put(ModBlocks.spruce_torch, ModBlocks.spruce_wall_torch);
+        torches.put(ModBlocks.birch_torch, ModBlocks.birch_wall_torch);
+        torches.put(ModBlocks.jungle_torch, ModBlocks.jungle_wall_torch);
+        torches.put(ModBlocks.acacia_torch, ModBlocks.acacia_wall_torch);
+        TORCHES = ImmutableMap.copyOf(torches);
+    }
 }

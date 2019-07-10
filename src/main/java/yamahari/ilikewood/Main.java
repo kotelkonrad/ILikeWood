@@ -21,9 +21,12 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
+import yamahari.ilikewood.blocks.torch.WoodenTorchBlock;
+import yamahari.ilikewood.blocks.torch.WoodenWallTorchBlock;
 import yamahari.ilikewood.container.WoodenLecternContainer;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
 import yamahari.ilikewood.items.*;
+import yamahari.ilikewood.objectholders.ModBlocks;
 import yamahari.ilikewood.proxy.ClientProxy;
 import yamahari.ilikewood.proxy.CommonProxy;
 import yamahari.ilikewood.proxy.Proxy;
@@ -33,6 +36,8 @@ import yamahari.ilikewood.tileentities.WoodenLecternTileEntity;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
 import yamahari.ilikewood.util.WoodType;
+
+import java.util.Map;
 
 @Mod(Constants.MOD_ID)
 public class Main {
@@ -76,7 +81,9 @@ public class Main {
                         new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding"),
                         new WoodenLadderBlock(woodType).setRegistryName(woodType.getName() + "_ladder"),
                         new WoodenComposterBlock(woodType).setRegistryName(woodType.getName() + "_composter"),
-                        new WoodenLogPileBlock(woodType).setRegistryName(woodType.getName() + "_log_pile")
+                        new WoodenLogPileBlock(woodType).setRegistryName(woodType.getName() + "_log_pile"),
+                        new WoodenTorchBlock(woodType).setRegistryName(woodType.getName() + "_torch"),
+                        new WoodenWallTorchBlock(woodType).setRegistryName(woodType.getName() + "_wall_torch")
                 );
             }
 
@@ -149,6 +156,10 @@ public class Main {
                 registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
             }
 
+            for(Map.Entry<Block, Block> entry : Constants.TORCHES.entrySet()) {
+                registry.register(new WallOrFloorItem(entry.getKey(), entry.getValue(), (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(entry.getKey().getRegistryName()));
+            }
+
             for(WoodType woodType : WoodType.values()) {
                 registry.register(new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(woodType.getName() + "_stick"));
                 for(String tier : Constants.ITEM_TIER_MAP.keySet()) {
@@ -208,11 +219,6 @@ public class Main {
                     new ContainerType<>(WoodenWorkbenchContainer::new).setRegistryName("wooden_workbench_container"),
                     new ContainerType<>((p_221504_0_, p_221504_1_) -> new WoodenLecternContainer(p_221504_0_)).setRegistryName("wooden_lectern_container")
             );
-        }
-
-        @SubscribeEvent
-        public static void onRegisterVillagerProfession(final RegistryEvent.Register<VillagerProfession> event) {
-
         }
     }
 }

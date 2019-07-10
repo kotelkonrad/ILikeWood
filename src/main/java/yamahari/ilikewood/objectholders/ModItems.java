@@ -6,6 +6,13 @@ import yamahari.ilikewood.util.Constants;
 
 @ObjectHolder(Constants.MOD_ID)
 public class ModItems {
+    public static final Item oak_torch = null;
+    public static final Item dark_oak_torch = null;
+    public static final Item spruce_torch = null;
+    public static final Item birch_torch = null;
+    public static final Item jungle_torch = null;
+    public static final Item acacia_torch = null;
+
     public static final Item oak_wall = null;
     public static final Item dark_oak_wall = null;
     public static final Item spruce_wall = null;

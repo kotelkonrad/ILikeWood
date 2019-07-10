@@ -6,6 +6,20 @@ import yamahari.ilikewood.util.Constants;
 
 @ObjectHolder(Constants.MOD_ID)
 public class ModBlocks {
+    public static final Block oak_torch = null;
+    public static final Block dark_oak_torch = null;
+    public static final Block spruce_torch = null;
+    public static final Block birch_torch = null;
+    public static final Block jungle_torch = null;
+    public static final Block acacia_torch = null;
+
+    public static final Block oak_wall_torch = null;
+    public static final Block dark_oak_wall_torch = null;
+    public static final Block spruce_wall_torch = null;
+    public static final Block birch_wall_torch = null;
+    public static final Block jungle_wall_torch = null;
+    public static final Block acacia_wall_torch = null;
+
     public static final Block oak_wall = null;
     public static final Block dark_oak_wall = null;
     public static final Block spruce_wall = null;
