@@ -6,6 +6,13 @@
   "block.ilikewood.birch_wall": "Brzozowy murek",
   "block.ilikewood.jungle_wall": "Tropikalny murek",
 
+  "block.ilikewood.acacia_torch": "Akacjowa pochodnia",
+  "block.ilikewood.oak_torch": "Dębowa pochodnia",
+  "block.ilikewood.dark_oak_torch": "Ciemnodębowa pochodnia",
+  "block.ilikewood.spruce_torch": "Świerkowa pochodnia",
+  "block.ilikewood.birch_torch": "Brzozowa pochodnia",
+  "block.ilikewood.jungle_torch": "Tropikalna pochodnia",
+
   "block.ilikewood.oak_barrel": "Beczka dębowa",
   "block.ilikewood.dark_oak_barrel": "Beczka ciemnodębowa",
   "block.ilikewood.spruce_barrel": "Beczka świerkowa",
