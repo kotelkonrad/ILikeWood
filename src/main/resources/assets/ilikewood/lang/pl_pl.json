@@ -88,7 +88,7 @@
   "container.ilikewood.spruce_lectern": "Pulpit świerkowy",
   "container.ilikewood.birch_lectern": "Pulpit brzozowy",
   "container.ilikewood.jungle_lectern": "Pulpit tropikalny",
-  "container.ilikewood.acacia_lectern": "Pulpit akacjowy"
+  "container.ilikewood.acacia_lectern": "Pulpit akacjowy",
 	
   "block.ilikewood.gray_jungle_bed": "Szare łóżko tropikalne",
   "block.ilikewood.orange_jungle_bed": "Pomarańczowe łóżko tropikalne",
@@ -185,14 +185,14 @@
   "block.ilikewood.gray_dark_oak_bed": "Szary łóżko ciemnodębowe",
   "block.ilikewood.lime_jungle_bed": "Jasnozielone łóżko tropikalne",
   "block.ilikewood.blue_dark_oak_bed": "Niebieskie łóżko ciemnodębowe",
-  "block.ilikewood.white_spruce_bed": "Białe łóżko świerkowe"
+  "block.ilikewood.white_spruce_bed": "Białe łóżko świerkowe",
   
   "block.ilikewood.oak_scaffolding": "Dębowe rusztowanie",
   "block.ilikewood.dark_oak_scaffolding": "Ciemnodębowe rusztowanie",
   "block.ilikewood.spruce_scaffolding": "Świerkowe rusztowanie",
   "block.ilikewood.birch_scaffolding": "Brzozowe rusztowanie",
   "block.ilikewood.jungle_scaffolding": "Tropikalne rusztowanie",
-  "block.ilikewood.acacia_scaffolding": "Akacjowe rusztowanie"
+  "block.ilikewood.acacia_scaffolding": "Akacjowe rusztowanie",
 
   "item.ilikewood.oak_stick": "Dębowy patyk",
   "item.ilikewood.dark_oak_stick": "Ciemnodębowy patyk",
@@ -206,7 +206,7 @@
   "block.ilikewood.spruce_ladder": "Drabina świerkowa",
   "block.ilikewood.birch_ladder": "Drabina brzozowa",
   "block.ilikewood.jungle_ladder": "Drabina tropikalna",
-  "block.ilikewood.acacia_ladder": "Drabina akacjowa"
+  "block.ilikewood.acacia_ladder": "Drabina akacjowa",
 
   "block.ilikewood.oak_composter": "Dębowy kompostownik",
   "block.ilikewood.dark_oak_composter":"Ciemnodębowy kompostownik",
