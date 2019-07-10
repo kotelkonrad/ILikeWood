@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "ilikewood:block/torch/wall/jungle" },
+        "facing=south": { "model": "ilikewood:block/torch/wall/jungle", "y": 90 },
+        "facing=west": { "model": "ilikewood:block/torch/wall/jungle", "y": 180 },
+        "facing=north": { "model": "ilikewood:block/torch/wall/jungle", "y": 270 }
+    }
+}

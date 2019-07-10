@@ -5,6 +5,13 @@
   "block.ilikewood.spruce_wall": "Spruce Wall",
   "block.ilikewood.birch_wall": "Birch Wall",
   "block.ilikewood.jungle_wall": "Jungle Wall",
+  
+  "block.ilikewood.acacia_torch": "Acacia Torch",
+  "block.ilikewood.oak_torch": "Oak Torch",
+  "block.ilikewood.dark_oak_torch": "Dark Oak Torch",
+  "block.ilikewood.spruce_torch": "Spruce Torch",
+  "block.ilikewood.birch_torch": "Birch Torch",
+  "block.ilikewood.jungle_torch": "Jungle Torch",
 
   "block.ilikewood.oak_barrel": "Oak Barrel",
   "block.ilikewood.dark_oak_barrel": "Dark Oak Barrel",
