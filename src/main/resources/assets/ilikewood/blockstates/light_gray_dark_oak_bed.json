@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "part=foot,facing=west": {
+      "model": "ilikewood:block/bed/foot/light_gray/dark_oak",
+      "y": 270,
+      "uvlock": false
+    },
+    "part=foot,facing=south": {
+      "model": "ilikewood:block/bed/foot/light_gray/dark_oak",
+      "y": 180,
+      "uvlock": false
+    },
+    "part=head,facing=south": {
+      "model": "ilikewood:block/bed/head/light_gray/dark_oak",
+      "y": 180,
+      "uvlock": false
+    },
+    "part=foot,facing=east": {
+      "model": "ilikewood:block/bed/foot/light_gray/dark_oak",
+      "y": 90,
+      "uvlock": false
+    },
+    "part=head,facing=north": {
+      "model": "ilikewood:block/bed/head/light_gray/dark_oak",
+      "y": 0,
+      "uvlock": false
+    },
+    "part=head,facing=east": {
+      "model": "ilikewood:block/bed/head/light_gray/dark_oak",
+      "y": 90,
+      "uvlock": false
+    },
+    "part=head,facing=west": {
+      "model": "ilikewood:block/bed/head/light_gray/dark_oak",
+      "y": 270,
+      "uvlock": false
+    },
+    "part=foot,facing=north": {
+      "model": "ilikewood:block/bed/foot/light_gray/dark_oak",
+      "y": 0,
+      "uvlock": false
+    }
+  }
+}

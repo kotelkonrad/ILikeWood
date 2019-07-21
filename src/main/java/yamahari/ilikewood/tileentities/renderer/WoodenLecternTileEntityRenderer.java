@@ -22,7 +22,7 @@ public class WoodenLecternTileEntityRenderer extends TileEntityRenderer<WoodenLe
     }
 
     @Override
-    public void render(WoodenLecternTileEntity p_199341_1_, double p_199341_2_, double p_199341_4_, double p_199341_6_, float p_199341_8_, int p_199341_9_) {
+    public void func_199341_a(WoodenLecternTileEntity p_199341_1_, double p_199341_2_, double p_199341_4_, double p_199341_6_, float p_199341_8_, int p_199341_9_) {
         BlockState lvt_10_1_ = p_199341_1_.getBlockState();
         if ((Boolean)lvt_10_1_.get(WoodenLecternBlock.HAS_BOOK)) {
             GlStateManager.pushMatrix();

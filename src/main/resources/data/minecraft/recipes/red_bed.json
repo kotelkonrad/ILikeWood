@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "ilikewood:red_beds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_bed"
+  }
+}

@@ -5,10 +5,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -22,8 +21,12 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yamahari.ilikewood.blocks.*;
+import yamahari.ilikewood.blocks.torch.WoodenTorchBlock;
+import yamahari.ilikewood.blocks.torch.WoodenWallTorchBlock;
 import yamahari.ilikewood.container.WoodenLecternContainer;
 import yamahari.ilikewood.container.WoodenWorkbenchContainer;
+import yamahari.ilikewood.items.*;
+import yamahari.ilikewood.objectholders.ModBlocks;
 import yamahari.ilikewood.proxy.ClientProxy;
 import yamahari.ilikewood.proxy.CommonProxy;
 import yamahari.ilikewood.proxy.Proxy;
@@ -33,6 +36,8 @@ import yamahari.ilikewood.tileentities.WoodenLecternTileEntity;
 import yamahari.ilikewood.tileentities.renderer.WoodenChestItemStackTileEntityRenderer;
 import yamahari.ilikewood.util.Constants;
 import yamahari.ilikewood.util.WoodType;
+
+import java.util.Map;
 
 @Mod(Constants.MOD_ID)
 public class Main {
@@ -72,8 +77,22 @@ public class Main {
                         new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.f).sound(SoundType.WOOD)).setRegistryName(woodType.getName() + "_panels"),
                         WoodenPostBlock.builder(woodType).setRegistryName(woodType.getName() + "_post"),
                         WoodenStrippedPostBlock.builder(woodType).setRegistryName("stripped_" + woodType.getName() + "_post"),
-                        new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern")
+                        new WoodenLecternBlock(woodType).setRegistryName(woodType.getName() + "_lectern"),
+                        new WoodenScaffoldingBlock(woodType).setRegistryName(woodType.getName() + "_scaffolding"),
+                        new WoodenLadderBlock(woodType).setRegistryName(woodType.getName() + "_ladder"),
+                        new WoodenComposterBlock(woodType).setRegistryName(woodType.getName() + "_composter"),
+                        new WoodenLogPileBlock(woodType).setRegistryName(woodType.getName() + "_log_pile"),
+                        new WoodenTorchBlock(woodType).setRegistryName(woodType.getName() + "_torch"),
+                        new WoodenWallTorchBlock(woodType).setRegistryName(woodType.getName() + "_wall_torch")
                 );
+            }
+
+            for(DyeColor dyeColor : DyeColor.values()) {
+                for(WoodType woodType : WoodType.values()) {
+                    registry.register(
+                            new WoodenBedBlock(woodType, dyeColor).setRegistryName(dyeColor.getName() + "_" + woodType.getName() + "_bed")
+                    );
+                }
             }
         }
 
@@ -115,6 +134,56 @@ public class Main {
 
             for(Block block : Constants.LECTERNS) {
                 registry.register(new BlockItem(block, (new Item.Properties()).group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.BEDS) {
+                registry.register(new BedItem(block, (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.SCAFFOLDINGS) {
+                registry.register(new WoodenScaffoldingItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.LADDERS) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.COMPOSTERS) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Block block : Constants.LOG_PILES) {
+                registry.register(new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+            }
+
+            for(Map.Entry<Block, Block> entry : Constants.TORCHES.entrySet()) {
+                registry.register(new WallOrFloorItem(entry.getKey(), entry.getValue(), (new Item.Properties()).group(ItemGroup.DECORATIONS)).setRegistryName(entry.getKey().getRegistryName()));
+            }
+
+            for(WoodType woodType : WoodType.values()) {
+                registry.register(new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(woodType.getName() + "_stick"));
+                for(String tier : Constants.ITEM_TIER_MAP.keySet()) {
+                    if(tier.equals("wooden")) {
+                        for(WoodType w : WoodType.values()) {
+                            registry.registerAll(
+                                    WoodenAxeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_axe"),
+                                    new WoodenPickaxeItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_pickaxe"),
+                                    new WoodenShovelItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_shovel"),
+                                    new WoodenSwordItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_sword"),
+                                    WoodenHoeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(w.getName() + "_" + tier + "_" + woodType.getName() + "_hoe")
+                            );
+                        }
+                    }
+                    else {
+                        registry.registerAll(
+                                WoodenAxeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_axe"),
+                                new WoodenPickaxeItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_pickaxe"),
+                                new WoodenShovelItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_shovel"),
+                                new WoodenSwordItem(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_sword"),
+                                WoodenHoeItem.builder(woodType, Constants.ITEM_TIER_MAP.get(tier)).setRegistryName(tier + "_" + woodType.getName() + "_hoe")
+                        );
+                    }
+                }
             }
         }
 

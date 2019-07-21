@@ -1,0 +1,6 @@
+{
+	"parent": "ilikewood:block/log_pile/template",
+	"textures": {
+		"log": "ilikewood:block/log_pile/spruce"
+	}
+}

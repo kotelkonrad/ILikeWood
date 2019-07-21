@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ilikewood:oak_post"
+    }
+  },
+  "result": {
+    "item": "ilikewood:oak_log_pile"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "ilikewood:birch_stick"
+    }
+  },
+  "result": {
+    "item": "ilikewood:birch_ladder",
+    "count": 3
+  }
+}

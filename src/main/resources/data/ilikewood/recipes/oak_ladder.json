@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "ilikewood:oak_stick"
+    }
+  },
+  "result": {
+    "item": "ilikewood:oak_ladder",
+    "count": 3
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ilikewood:jungle_post"
+    }
+  },
+  "result": {
+    "item": "ilikewood:jungle_log_pile"
+  }
+}

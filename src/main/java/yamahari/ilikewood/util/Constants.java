@@ -3,12 +3,16 @@ package yamahari.ilikewood.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemTier;
 import yamahari.ilikewood.objectholders.ModBlocks;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Constants {
     public static final String MOD_ID = "ilikewood";
+    public static final ImmutableMap<Block, Block> TORCHES;
+    
     public static final ImmutableSet<Block> BARRELS =
             ImmutableSet.of(
                     ModBlocks.oak_barrel,
@@ -99,6 +103,146 @@ public class Constants {
                     ModBlocks.acacia_lectern
             );
 
+    public static final ImmutableSet<Block> BEDS =
+            ImmutableSet.of(
+                    ModBlocks.black_oak_bed,
+                    ModBlocks.black_dark_oak_bed,
+                    ModBlocks.black_spruce_bed,
+                    ModBlocks.black_birch_bed,
+                    ModBlocks.black_jungle_bed,
+                    ModBlocks.black_acacia_bed,
+                    ModBlocks.blue_oak_bed,
+                    ModBlocks.blue_dark_oak_bed,
+                    ModBlocks.blue_spruce_bed,
+                    ModBlocks.blue_birch_bed,
+                    ModBlocks.blue_jungle_bed,
+                    ModBlocks.blue_acacia_bed,
+                    ModBlocks.brown_oak_bed,
+                    ModBlocks.brown_dark_oak_bed,
+                    ModBlocks.brown_spruce_bed,
+                    ModBlocks.brown_birch_bed,
+                    ModBlocks.brown_jungle_bed,
+                    ModBlocks.brown_acacia_bed,
+                    ModBlocks.cyan_oak_bed,
+                    ModBlocks.cyan_dark_oak_bed,
+                    ModBlocks.cyan_spruce_bed,
+                    ModBlocks.cyan_birch_bed,
+                    ModBlocks.cyan_jungle_bed,
+                    ModBlocks.cyan_acacia_bed,
+                    ModBlocks.gray_oak_bed,
+                    ModBlocks.gray_dark_oak_bed,
+                    ModBlocks.gray_spruce_bed,
+                    ModBlocks.gray_birch_bed,
+                    ModBlocks.gray_jungle_bed,
+                    ModBlocks.gray_acacia_bed,
+                    ModBlocks.green_oak_bed,
+                    ModBlocks.green_dark_oak_bed,
+                    ModBlocks.green_spruce_bed,
+                    ModBlocks.green_birch_bed,
+                    ModBlocks.green_jungle_bed,
+                    ModBlocks.green_acacia_bed,
+                    ModBlocks.light_blue_oak_bed,
+                    ModBlocks.light_blue_dark_oak_bed,
+                    ModBlocks.light_blue_spruce_bed,
+                    ModBlocks.light_blue_birch_bed,
+                    ModBlocks.light_blue_jungle_bed,
+                    ModBlocks.light_blue_acacia_bed,
+                    ModBlocks.light_gray_oak_bed,
+                    ModBlocks.light_gray_dark_oak_bed,
+                    ModBlocks.light_gray_spruce_bed,
+                    ModBlocks.light_gray_birch_bed,
+                    ModBlocks.light_gray_jungle_bed,
+                    ModBlocks.light_gray_acacia_bed,
+                    ModBlocks.lime_oak_bed,
+                    ModBlocks.lime_dark_oak_bed,
+                    ModBlocks.lime_spruce_bed,
+                    ModBlocks.lime_birch_bed,
+                    ModBlocks.lime_jungle_bed,
+                    ModBlocks.lime_acacia_bed,
+                    ModBlocks.magenta_oak_bed,
+                    ModBlocks.magenta_dark_oak_bed,
+                    ModBlocks.magenta_spruce_bed,
+                    ModBlocks.magenta_birch_bed,
+                    ModBlocks.magenta_jungle_bed,
+                    ModBlocks.magenta_acacia_bed,
+                    ModBlocks.orange_oak_bed,
+                    ModBlocks.orange_dark_oak_bed,
+                    ModBlocks.orange_spruce_bed,
+                    ModBlocks.orange_birch_bed,
+                    ModBlocks.orange_jungle_bed,
+                    ModBlocks.orange_acacia_bed,
+                    ModBlocks.pink_oak_bed,
+                    ModBlocks.pink_dark_oak_bed,
+                    ModBlocks.pink_spruce_bed,
+                    ModBlocks.pink_birch_bed,
+                    ModBlocks.pink_jungle_bed,
+                    ModBlocks.pink_acacia_bed,
+                    ModBlocks.purple_oak_bed,
+                    ModBlocks.purple_dark_oak_bed,
+                    ModBlocks.purple_spruce_bed,
+                    ModBlocks.purple_birch_bed,
+                    ModBlocks.purple_jungle_bed,
+                    ModBlocks.purple_acacia_bed,
+                    ModBlocks.red_oak_bed,
+                    ModBlocks.red_dark_oak_bed,
+                    ModBlocks.red_spruce_bed,
+                    ModBlocks.red_birch_bed,
+                    ModBlocks.red_jungle_bed,
+                    ModBlocks.red_acacia_bed,
+                    ModBlocks.white_oak_bed,
+                    ModBlocks.white_dark_oak_bed,
+                    ModBlocks.white_spruce_bed,
+                    ModBlocks.white_birch_bed,
+                    ModBlocks.white_jungle_bed,
+                    ModBlocks.white_acacia_bed,
+                    ModBlocks.yellow_oak_bed,
+                    ModBlocks.yellow_dark_oak_bed,
+                    ModBlocks.yellow_spruce_bed,
+                    ModBlocks.yellow_birch_bed,
+                    ModBlocks.yellow_jungle_bed,
+                    ModBlocks.yellow_acacia_bed
+            );
+
+    public static final ImmutableSet<Block> SCAFFOLDINGS =
+            ImmutableSet.of(
+                    ModBlocks.oak_scaffolding,
+                    ModBlocks.dark_oak_scaffolding,
+                    ModBlocks.spruce_scaffolding,
+                    ModBlocks.birch_scaffolding,
+                    ModBlocks.jungle_scaffolding,
+                    ModBlocks.acacia_scaffolding
+            );
+
+    public static final ImmutableSet<Block> LADDERS =
+            ImmutableSet.of(
+                    ModBlocks.oak_ladder,
+                    ModBlocks.dark_oak_ladder,
+                    ModBlocks.spruce_ladder,
+                    ModBlocks.birch_ladder,
+                    ModBlocks.jungle_ladder,
+                    ModBlocks.acacia_ladder
+            );
+
+    public static final ImmutableSet<Block> COMPOSTERS =
+            ImmutableSet.of(
+                    ModBlocks.oak_composter,
+                    ModBlocks.dark_oak_composter,
+                    ModBlocks.spruce_composter,
+                    ModBlocks.birch_composter,
+                    ModBlocks.jungle_composter,
+                    ModBlocks.acacia_composter
+            );
+
+    public static final ImmutableSet<Block> LOG_PILES =
+            ImmutableSet.of(
+                    ModBlocks.oak_log_pile,
+                    ModBlocks.dark_oak_log_pile,
+                    ModBlocks.spruce_log_pile,
+                    ModBlocks.birch_log_pile,
+                    ModBlocks.jungle_log_pile,
+                    ModBlocks.acacia_log_pile
+            );
+
     public static final Map<Block, Block> POST_STRIPPING_MAP =
             (new ImmutableMap.Builder<Block, Block>())
                     .put(ModBlocks.oak_post, ModBlocks.stripped_oak_post)
@@ -108,5 +252,22 @@ public class Constants {
                     .put(ModBlocks.jungle_post, ModBlocks.stripped_jungle_post)
                     .put(ModBlocks.acacia_post, ModBlocks.stripped_acacia_post).build();
 
+    public static final Map<String, ItemTier> ITEM_TIER_MAP =
+            (new ImmutableMap.Builder<String, ItemTier>())
+                    .put("wooden", ItemTier.WOOD)
+                    .put("stone", ItemTier.STONE)
+                    .put("iron", ItemTier.IRON)
+                    .put("diamond", ItemTier.DIAMOND)
+                    .put("golden", ItemTier.GOLD).build();
 
+    static {
+        Map<Block, Block> torches = new HashMap();
+        torches.put(ModBlocks.oak_torch, ModBlocks.oak_wall_torch);
+        torches.put(ModBlocks.dark_oak_torch, ModBlocks.dark_oak_wall_torch);
+        torches.put(ModBlocks.spruce_torch, ModBlocks.spruce_wall_torch);
+        torches.put(ModBlocks.birch_torch, ModBlocks.birch_wall_torch);
+        torches.put(ModBlocks.jungle_torch, ModBlocks.jungle_wall_torch);
+        torches.put(ModBlocks.acacia_torch, ModBlocks.acacia_wall_torch);
+        TORCHES = ImmutableMap.copyOf(torches);
+    }
 }

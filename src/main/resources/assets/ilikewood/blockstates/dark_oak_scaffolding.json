@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "bottom=true": { "model": "ilikewood:block/scaffolding/unstable/dark_oak" },
+        "bottom=false": { "model": "ilikewood:block/scaffolding/stable/dark_oak" }
+    }
+}

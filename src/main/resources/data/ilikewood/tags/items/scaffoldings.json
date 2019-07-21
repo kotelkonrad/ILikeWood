@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_scaffolding",
+    "ilikewood:dark_oak_scaffolding",
+    "ilikewood:spruce_scaffolding",
+    "ilikewood:birch_scaffolding",
+    "ilikewood:acacia_scaffolding",
+    "ilikewood:jungle_scaffolding"
+  ]
+}

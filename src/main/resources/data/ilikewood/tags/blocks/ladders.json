@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ilikewood:oak_ladder",
+    "ilikewood:dark_oak_ladder",
+    "ilikewood:spruce_ladder",
+    "ilikewood:birch_ladder",
+    "ilikewood:acacia_ladder",
+    "ilikewood:jungle_ladder"
+  ]
+}

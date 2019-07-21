@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I~I",
+    "I I",
+    "I I"
+  ],
+  "key": {
+    "~": {
+      "item": "minecraft:string"
+    },
+    "I": {
+      "item": "ilikewood:birch_stick"
+    }
+  },
+  "result": {
+    "item": "ilikewood:birch_scaffolding",
+    "count": 6
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "ilikewood:block/bed/head/template",
+  "textures": {
+    "sheet": "entity/bed/pink",
+    "planks": "block/acacia_planks",
+    "frame": "ilikewood:block/bed/frame/acacia"
+  }
+}

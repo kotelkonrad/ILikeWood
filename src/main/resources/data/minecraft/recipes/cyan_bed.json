@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "ilikewood:cyan_beds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cyan_bed"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "ilikewood:block/log_pile/birch", "y": 180 },
+        "facing=south": { "model": "ilikewood:block/log_pile/birch" },
+        "facing=east": { "model": "ilikewood:block/log_pile/birch", "y": 270 },
+        "facing=west": { "model": "ilikewood:block/log_pile/birch", "y": 90 }
+    }
+}
